@@ -1,0 +1,93 @@
+/*
+ * OTA.c
+ *
+ *  Created on: Jan 14, 2025
+ *      Author: NCPC
+ */
+
+#include "OTA.h"
+
+uint32_t word_to_write = 0;
+void Process_Bin_File() {
+    uint32_t write_address = SLOT1;
+
+    for (int i= 0; i < SIZE; i++) {
+        uint32_t word_to_write =
+            (Firmware_rx[i][3] << 24) |
+            (Firmware_rx[i][2] << 16) |
+            (Firmware_rx[i][1] << 8)  |
+             Firmware_rx[i][0];
+
+        Flash_Write_Data(write_address, &word_to_write, 1);
+        write_address += 4;
+    }
+
+    // update Flag for bootloader
+    uint32_t rx= 0;
+    Flash_Read_Data(FLAG_ADDRESS,&rx, 1);
+    uint32_t flag = 0x00000001;
+    Flash_Write_Data(FLAG_ADDRESS, &flag, 1);
+
+    // reset system
+    NVIC_SystemReset();
+}
+
+// Copy SLOT 1||2 to APPLICATION ADDRESS
+void Copy_To_Application(uint32_t Address){
+	uint32_t target_Address= Address;
+    uint32_t application_Address = ADDRESS;
+	uint32_t copy_Buffer= 0;
+
+	Flash_Read_Data(target_Address,&copy_Buffer, 1);
+	while(copy_Buffer!= 0xFFFFFFFF){
+		Flash_Write_Data(application_Address, &copy_Buffer, 1);
+		target_Address+= 4;
+		application_Address += 4;
+		Flash_Read_Data(target_Address,&copy_Buffer, 1);
+	}
+
+    uint32_t flag = 0x00000001;
+    Flash_Write_Data(FLAG_ADDRESS, &flag, 1);
+}
+
+void Jump_To_Application(uint32_t appAddress)
+{
+//	//Disable, deinit and clear all peripheral
+//    HAL_RCC_DeInit();
+//    HAL_DeInit();
+//
+//    // Turn off systick
+//    SysTick->CTRL = 0;
+//    SysTick->LOAD = 0;
+//    SysTick->VAL  = 0;
+//
+//    // disable interrupt:
+//    __disable_irq();
+//
+//    // Clear Pending interrupt request
+//    SCB->SHCSR &= ~(SCB_SHCSR_USGFAULTENA_Msk |
+//                    SCB_SHCSR_BUSFAULTENA_Msk |
+//                    SCB_SHCSR_MEMFAULTENA_Msk);
+//
+//    // interrupt clearing
+//    for (int i = 0; i < sizeof(NVIC->ICER) / sizeof(NVIC->ICER[0]); i++)
+//    {
+//      NVIC->ICER[i] = 0xFFFFFFFF;
+//      NVIC->ICPR[i] = 0xFFFFFFFF;
+//    }
+
+    // enable interrupt:
+//	__enable_irq();
+
+    // set main stack pointer and update vector table
+    __set_MSP(*(__IO uint32_t*)appAddress);
+    SCB->VTOR = appAddress;
+
+    // Jump to application
+    typedef void (*pFunction)(void);
+    pFunction JumpToApp = (pFunction)(*(__IO uint32_t*)(appAddress + 4));
+
+    JumpToApp();
+}
+
+

@@ -1,0 +1,11 @@
+{
+  "additionalFiles": "..\\..\\..,..\\..\\..",
+  "builtInToolsFolders": "",
+  "compiler.optimization_flags": "{build.flags.optimize} {build.flags.debug}",
+  "customBuildProperties": "",
+  "fqbn": "STMicroelectronics:stm32:GenF4:pnum=GENERIC_F407VGTX,upload_method=swdMethod,xserial=generic,usb=none,xusb=FS,opt=osstd,dbg=none,rtlib=nano",
+  "hardwareFolders": "C:\\Users\\NCPC\\AppData\\Local\\Arduino15\\packages",
+  "otherLibrariesFolders": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries",
+  "runtime.ide.version": "10607",
+  "sketchLocation": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader"
+}

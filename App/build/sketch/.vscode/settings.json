@@ -1,0 +1,19 @@
+#line 1 "C:\\TTD\\CONG DANH\\FOTA\\App\\.vscode\\settings.json"
+{
+    "files.associations": {
+        "array": "cpp",
+        "deque": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "string_view": "cpp",
+        "flash.h": "c",
+        "stm32f4xx.h": "c",
+        "stdint.h": "c"
+    }
+}

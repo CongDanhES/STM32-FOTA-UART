@@ -1,0 +1,4 @@
+../Core/OTALib/Flash.c:15:10:GetSector	24	static
+../Core/OTALib/Flash.c:137:10:Flash_Write_Data	56	static
+../Core/OTALib/Flash.c:194:6:Flash_Read_Data	24	static
+../Core/OTALib/Flash.c:211:10:Flash_Erase_Sector	32	static

@@ -1,0 +1,23 @@
+07:48:50 **** Incremental Build of configuration Debug for project FOTA ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/OTALib/UART.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F407xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/OTALib/UART.d" -MT"Core/OTALib/UART.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/OTALib/UART.o"
+arm-none-eabi-gcc -o "FOTA.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\NCPC\Desktop\Danh\FOTA\FOTA\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FOTA.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: FOTA.elf
+ 
+arm-none-eabi-size   FOTA.elf 
+arm-none-eabi-objdump -h -S  FOTA.elf  > "FOTA.list"
+arm-none-eabi-objcopy  -O ihex  FOTA.elf  "FOTA.hex"
+arm-none-eabi-objcopy  -O binary  FOTA.elf  "FOTA.bin"
+   text	   data	    bss	    dec	    hex	filename
+  14488	     20	  14428	  28936	   7108	FOTA.elf
+Finished building: default.size.stdout
+ 
+Finished building: FOTA.hex
+Finished building: FOTA.bin
+ 
+ 
+Finished building: FOTA.list
+ 
+
+07:48:51 Build Finished. 0 errors, 0 warnings. (took 495ms)
+

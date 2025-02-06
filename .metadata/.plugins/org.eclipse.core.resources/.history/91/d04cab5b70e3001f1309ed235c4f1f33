@@ -1,0 +1,13 @@
+/*
+ * UART.h
+ *
+ *  Created on: Feb 5, 2025
+ *      Author: NCPC
+ */
+
+#ifndef INC_UART_H_
+#define INC_UART_H_
+
+extern UART_HandleTypeDef huart2;
+
+#endif /* INC_UART_H_ */

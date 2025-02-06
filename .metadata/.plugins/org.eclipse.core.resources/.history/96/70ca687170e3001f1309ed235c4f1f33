@@ -1,0 +1,21 @@
+/*
+ * UART.c
+ *
+ *  Created on: Feb 5, 2025
+ *      Author: NCPC
+ */
+
+#include "UART.h"
+
+uint8_t rx_data = 0;
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+    if (huart->Instance == USART2) {
+    	if(rx_data == '\r' || rx_data == '\n'){
+			if(strcmp((char* )uart_rx, "OTA_START") == 0){
+
+			}
+    	}
+	    HAL_UART_Receive_IT(&huart2, &rx_data, 1);
+    }
+}

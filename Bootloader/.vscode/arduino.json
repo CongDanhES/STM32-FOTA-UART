@@ -1,0 +1,7 @@
+{
+    "configuration": "pnum=GENERIC_F407VGTX,upload_method=swdMethod,xserial=generic,usb=none,xusb=FS,opt=osstd,dbg=none,rtlib=nano",
+    "board": "STMicroelectronics:stm32:GenF4",
+    "output": "./build",
+    "port": "COM1",
+    "sketch": "Bootloader.ino"
+}

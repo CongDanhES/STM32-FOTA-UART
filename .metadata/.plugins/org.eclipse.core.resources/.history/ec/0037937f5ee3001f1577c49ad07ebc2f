@@ -1,0 +1,22 @@
+/*
+ * OTA.h
+ *
+ *  Created on: Jan 14, 2025
+ *      Author: NCPC
+ */
+
+#ifndef OTALIB_OTA_H_
+#define OTALIB_OTA_H_
+
+#include "Flash.h"
+#include "UART.h"
+#include "Global.h"
+
+extern uint32_t word_to_write;
+
+void Process_Bin_File();
+
+void JumpToApplication(uint32_t appAddress);
+void bootLoader_handler(uint32_t addr_app_program);
+
+#endif /* OTALIB_OTA_H_ */
