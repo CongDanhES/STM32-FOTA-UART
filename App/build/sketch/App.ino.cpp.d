@@ -105,8 +105,6 @@ C:\TTD\CONG\ DANH\FOTA\App\build\sketch\App.ino.cpp.o: \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0/libraries/SrcWrapper/inc/PinNames.h \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino_analog.h \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino_digital.h \
- C:\TTD\CONG\ DANH\FOTA\App\build\sketch\myLibs/define.h \
- C:\TTD\CONG\ DANH\FOTA\App\build\sketch\myLibs/config.h \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/STM32FreeRTOS.h \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS.h \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/FreeRTOS.h \
@@ -136,8 +134,6 @@ C:\TTD\CONG\ DANH\FOTA\App\build\sketch\App.ino.cpp.o: \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/event_groups.h \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/event_groups.h \
  C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/timers.h \
- C:\TTD\CONG\ DANH\FOTA\App\build\sketch\myLibs/Flash.h \
- C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\system/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
- C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\system/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
- C:\TTD\CONG\ DANH\FOTA\App\build\sketch\myLibs/Flash.c \
- C:\TTD\CONG\ DANH\FOTA\App\build\sketch\myLibs/Flash.h
+ C:\TTD\CONG\ DANH\FOTA\App\build\sketch\src/myLibs/define.h \
+ C:\TTD\CONG\ DANH\FOTA\App\build\sketch\src/myLibs/config.h \
+ C:\TTD\CONG\ DANH\FOTA\App/src/myLibs/Flash/Flash.hpp

@@ -60,7 +60,7 @@
             "cStandard": "c11",
             "cppStandard": "c++17",
             "defines": [
-                "VECT_TAB_OFFSET=0x0",
+                "VECT_TAB_OFFSET=0x20000",
                 "USE_HAL_DRIVER",
                 "USE_FULL_LL_DRIVER",
                 "NDEBUG",
@@ -72,6 +72,7 @@
                 "VARIANT_H=\"variant_generic.h\"",
                 "STM32F407xx",
                 "HAL_UART_MODULE_ENABLED",
+                "VECT_TAB_OFFSET=0x20000",
                 "__DBL_MIN_EXP__=(-1021)",
                 "__HQ_FBIT__=15",
                 "__cpp_nontype_template_parameter_auto=201606L",

@@ -1,9 +1,8 @@
 # 1 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
 # 2 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 2
 # 3 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 2
-# 4 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 2
+
 # 5 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 2
-# 6 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 2
 
 
 
@@ -34,14 +33,14 @@ void setup() {
 
     // Create FreeRTOS tasks
     xTaskCreate(Task_UART, "UART_Task", 256, 
-# 35 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 3 4
+# 34 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 3 4
                                             __null
-# 35 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
+# 34 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
                                                 , 2, &Task_UART_Handle);
     xTaskCreate(Task_LED, "LED_Task", 128, 
-# 36 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 3 4
+# 35 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino" 3 4
                                           __null
-# 36 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
+# 35 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
                                               , 1, &Task_LED_Handle);
 
     // Start FreeRTOS scheduler
@@ -53,7 +52,7 @@ void Task_LED(void *pvParameters) {
     (void) pvParameters;
     while (1) {
         digitalWrite(63, !digitalRead(63));
-        vTaskDelay(( ( TickType_t ) ( ( ( TickType_t ) ( 500 ) * ( TickType_t ) ((TickType_t)1000) ) / ( TickType_t ) 1000 ) )); // Delay for 2 seconds
+        vTaskDelay(( ( TickType_t ) ( ( ( TickType_t ) ( 200 ) * ( TickType_t ) ((TickType_t)1000) ) / ( TickType_t ) 1000 ) )); // Delay for 2 seconds
     }
 }
 
@@ -74,8 +73,8 @@ void Task_UART(void *pvParameters) {
                 if (strcmp(receivedData, "OTA_START\r\0") == 0) {
                     // Optional: Send acknowledgment back
                     fota_port.println("OTA_START");
+                    flash.FlashWrite(0x08008000, &OTA_FLAG, 1);
                     delay(1000);
-                    Flash_Write_Data(0x08008000, &OTA_FLAG, 1);
                     HAL_NVIC_SystemReset();
 
                     // Reset buffer

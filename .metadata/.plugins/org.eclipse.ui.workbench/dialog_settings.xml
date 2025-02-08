@@ -6,12 +6,12 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
-			<item value="org.eclipse.ui.edit.text.zoomOut"/>
+			<item value="org.eclipse.ui.navigator.ProjectExplorer"/>
 			<item value="org.eclipse.search.ui.performTextSearchProject"/>
 			<item value="org.eclipse.debug.ui.MemoryView"/>
 		</list>
 		<list key="orderedProviders">
-			<item value="org.eclipse.ui.commands"/>
+			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.e4.ui.parts"/>
 		</list>
@@ -21,11 +21,17 @@
 			<item value="1"/>
 		</list>
 		<list key="textArray">
-			<item value="zoo"/>
+			<item value="proj"/>
 			<item value="search in fi"/>
 			<item value="me"/>
 		</list>
 	</section>
 	<section name="NewWizardAction">
+	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.e4.ui.importer.wizard"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+		</list>
 	</section>
 </section>

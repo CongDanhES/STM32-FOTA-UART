@@ -104,4 +104,37 @@ C:\TTD\CONG\ DANH\FOTA\Bootloader\build\sketch\Bootloader.ino.cpp.o: \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino.h \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0/libraries/SrcWrapper/inc/PinNames.h \
  C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino_analog.h \
- C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino_digital.h
+ C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0\cores\arduino/pins_arduino_digital.h \
+ C:\TTD\CONG\ DANH\FOTA\Bootloader\build\sketch\src/myLibs/Utils/define.hpp \
+ C:\TTD\CONG\ DANH\FOTA\Bootloader/src/myLibs/Utils/config.hpp \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/STM32FreeRTOS.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/FreeRTOS.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOSConfig.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOSConfig_Default.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/projdefs.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/portable.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/deprecated_definitions.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/portmacro.h \
+ C:\Users\NCPC\AppData\Local\Arduino15\packages\STMicroelectronics\hardware\stm32\2.8.0/libraries/SrcWrapper/inc/stm32_def.h \
+ C:/Users/NCPC/Documents/Arduino/libraries/STM32duino_FreeRTOS/portable/GCC/ARM_CM4F/portmacro.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/mpu_wrappers.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/cmsis_os.h \
+ C:/Users/NCPC/Documents/Arduino/libraries/STM32duino_FreeRTOS/portable/CMSIS_RTOS/cmsis_os.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/task.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/task.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/list.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/timers.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/timers.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/task.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/queue.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/queue.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/semphr.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/semphr.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/queue.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/event_groups.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/event_groups.h \
+ C:\Users\NCPC\Documents\Arduino\libraries\STM32duino_FreeRTOS\src/FreeRTOS/Source/include/timers.h \
+ C:\TTD\CONG\ DANH\FOTA\Bootloader/src/myLibs/OTA/FOTA.hpp \
+ C:\TTD\CONG\ DANH\FOTA\Bootloader/src/myLibs/Flash/Flash.hpp

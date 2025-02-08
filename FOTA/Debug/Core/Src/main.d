@@ -25,14 +25,14 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/OTA.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Flash.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/UART.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/OTA.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Global.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/UART.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Flash.h \
- C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Global.h
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/OTA.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Flash.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/UART.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/OTA.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Global.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/UART.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Flash.h \
+ C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Global.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -60,11 +60,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/OTA.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Flash.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/UART.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/OTA.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Global.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/UART.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Flash.h:
-C:/Users/NCPC/Desktop/Danh/FOTA/FOTA/Core/OTALib/Global.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/OTA.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Flash.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/UART.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/OTA.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Global.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/UART.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Flash.h:
+C:/TTD/CONG\ DANH/FOTA/FOTA/Core/OTALib/Global.h:

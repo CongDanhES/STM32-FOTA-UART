@@ -11,6 +11,11 @@
   },
   {
     "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\build\\sketch\\Bootloader.ino.cpp",
+    "Include": "STM32FreeRTOS.h",
+    "Includepath": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src"
+  },
+  {
+    "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\build\\sketch\\Bootloader.ino.cpp",
     "Include": "",
     "Includepath": null
   },
@@ -21,6 +26,81 @@
   },
   {
     "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\build\\sketch\\requiredLibraries.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\build\\sketch\\src\\myLibs\\Flash\\Flash.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\build\\sketch\\src\\myLibs\\OTA\\FOTA.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\croutine.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\event_groups.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\list.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\queue.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\stream_buffer.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\tasks.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\timers.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\STM32FreeRTOS.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\cmsis_os.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\heap.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\mpu_wrappers.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\port.c",
+    "Include": "",
+    "Includepath": null
+  },
+  {
+    "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\portasm.c",
     "Include": "",
     "Includepath": null
   },

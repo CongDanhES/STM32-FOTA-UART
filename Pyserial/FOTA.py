@@ -123,8 +123,7 @@ if __name__ == "__main__":
     try:
         send_ota_start()
         if wait_for_ota_start():
-            #send_binary_file('Firmware/App.ino.bin')
-            send_binary_file('Firmware/Application.bin')
+            send_binary_file('Firmware/App3.ino.bin')
         while True:
             read_incoming_data()
     except KeyboardInterrupt:

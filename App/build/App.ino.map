@@ -250,6 +250,15 @@ Discarded input sections
  .comment       0x00000000       0x3a C:\TTD\CONG DANH\FOTA\App\build\sketch\requiredLibraries.cpp.o
  .ARM.attributes
                 0x00000000       0x34 C:\TTD\CONG DANH\FOTA\App\build\sketch\requiredLibraries.cpp.o
+ .text          0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+ .data          0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+ .bss           0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+ .text._ZN10STM32Flash9FlashReadEmPmt
+                0x00000000       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+ .text._ZN10STM32Flash10FlashEraseEm
+                0x00000000       0x40 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+ .bss._ZZN10STM32Flash10FlashEraseEmE15EraseInitStruct
+                0x00000000       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
  .text          0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\croutine.c.o
  .data          0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\croutine.c.o
  .bss           0x00000000        0x0 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\croutine.c.o
@@ -5031,13 +5040,14 @@ Name             Origin             Length             Attributes
 *default*        0x00000000         0xffffffff
 CCMRAM           0x10000000         0x00010000         xrw
 RAM              0x20000000         0x00020000         xrw
-FLASH            0x08020000         0x000e0000         xr
+FLASH            0x08000000         0x00100000         xr
 
 Linker script and memory map
 
 START GROUP
 LOAD C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 LOAD C:\TTD\CONG DANH\FOTA\App\build\sketch\requiredLibraries.cpp.o
+LOAD C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 LOAD C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\croutine.c.o
 LOAD C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\event_groups.c.o
 LOAD C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
@@ -5258,1034 +5268,1046 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
                 0x00000200                        _Min_Heap_Size = 0x200
                 0x00000400                        _Min_Stack_Size = 0x400
 
-.isr_vector     0x08020000      0x188
-                0x08020000                        . = ALIGN (0x4)
+.isr_vector     0x08000000      0x188
+                0x08000000                        . = ALIGN (0x4)
  *(.isr_vector)
- .isr_vector    0x08020000      0x188 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
-                0x08020000                g_pfnVectors
-                0x08020188                        . = ALIGN (0x4)
+ .isr_vector    0x08000000      0x188 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
+                0x08000000                g_pfnVectors
+                0x08000188                        . = ALIGN (0x4)
 
-.text           0x08020190     0x516c
-                0x08020190                        . = ALIGN (0x4)
+.text           0x08000190     0x518c
+                0x08000190                        . = ALIGN (0x4)
  *(.text)
- .text          0x08020190       0x14 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
-                0x08020190                strcmp
- .text          0x080201a4       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
-                0x080201a4                strlen
- .text          0x080201b4       0x30 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
-                0x080201b4                __aeabi_uldivmod
- .text          0x080201e4        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
-                0x080201e4                __aeabi_idiv0
-                0x080201e4                __aeabi_ldiv0
+ .text          0x08000190       0x14 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
+                0x08000190                strcmp
+ .text          0x080001a4       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+                0x080001a4                strlen
+ .text          0x080001b4       0x30 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x080001b4                __aeabi_uldivmod
+ .text          0x080001e4        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x080001e4                __aeabi_idiv0
+                0x080001e4                __aeabi_ldiv0
  *(.text*)
  .text.__do_global_dtors_aux
-                0x080201e8       0x24 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080001e8       0x24 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text.frame_dummy
-                0x0802020c       0x1c C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0800020c       0x1c C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  .text._Z8Task_LEDPv
-                0x08020228       0x1e C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x08020228                Task_LED(void*)
- .text._Z9GetSectorm
-                0x08020246       0xa2 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x08020246                GetSector(unsigned long)
- .text._Z16Flash_Write_DatamPmm
-                0x080202e8       0x7c C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x080202e8                Flash_Write_Data(unsigned long, unsigned long*, unsigned long)
- .text.setup    0x08020364       0x88 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x08020364                setup
- .text.loop     0x080203ec        0x2 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x080203ec                loop
- *fill*         0x080203ee        0x2 
+                0x08000228       0x1c C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x08000228                Task_LED(void*)
+ .text.setup    0x08000244       0x88 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x08000244                setup
+ .text.loop     0x080002cc        0x2 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x080002cc                loop
+ *fill*         0x080002ce        0x2 
  .text.startup._GLOBAL__sub_I_fota_port
-                0x080203f0       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x080002d0       0x24 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .text.exit._GLOBAL__sub_D_fota_port
+                0x080002f4        0xc C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
  .text._Z9Task_UARTPv
-                0x08020404       0xa8 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x08020404                Task_UART(void*)
+                0x08000300       0xa8 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x08000300                Task_UART(void*)
+ .text._ZN10STM32FlashC2Ev
+                0x080003a8        0x2 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                0x080003a8                STM32Flash::STM32Flash()
+                0x080003a8                STM32Flash::STM32Flash()
+ .text._ZN10STM32FlashD2Ev
+                0x080003aa        0x2 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                0x080003aa                STM32Flash::~STM32Flash()
+                0x080003aa                STM32Flash::~STM32Flash()
+ .text._ZN10STM32Flash9GetSectorEm
+                0x080003ac       0xa2 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                0x080003ac                STM32Flash::GetSector(unsigned long)
+ *fill*         0x0800044e        0x2 
+ .text._ZN10STM32Flash10FlashWriteEmPmt
+                0x08000450       0x7c C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                0x08000450                STM32Flash::FlashWrite(unsigned long, unsigned long*, unsigned short)
  .text.vListInitialise
-                0x080204ac       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
-                0x080204ac                vListInitialise
+                0x080004cc       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x080004cc                vListInitialise
  .text.vListInitialiseItem
-                0x080204c2        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
-                0x080204c2                vListInitialiseItem
+                0x080004e2        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x080004e2                vListInitialiseItem
  .text.vListInsertEnd
-                0x080204c8       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
-                0x080204c8                vListInsertEnd
+                0x080004e8       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x080004e8                vListInsertEnd
  .text.vListInsert
-                0x080204de       0x2e C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
-                0x080204de                vListInsert
+                0x080004fe       0x2e C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x080004fe                vListInsert
  .text.uxListRemove
-                0x0802050c       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
-                0x0802050c                uxListRemove
+                0x0800052c       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x0800052c                uxListRemove
  .text.prvIsQueueEmpty
-                0x0802052c       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x0800054c       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .text.prvCopyDataToQueue
-                0x08020542       0x66 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000562       0x66 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .text.prvCopyDataFromQueue
-                0x080205a8       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x080005c8       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .text.prvUnlockQueue
-                0x080205d4       0x6c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x080005f4       0x6c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .text.xQueueGenericReset
-                0x08020640       0x7e C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x08020640                xQueueGenericReset
+                0x08000660       0x7e C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000660                xQueueGenericReset
  .text.xQueueGenericCreate
-                0x080206be       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x080206be                xQueueGenericCreate
+                0x080006de       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x080006de                xQueueGenericCreate
  .text.xQueueGenericSend
-                0x08020706      0x164 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x08020706                xQueueGenericSend
+                0x08000726      0x164 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000726                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x0802086a       0xba C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x0802086a                xQueueGenericSendFromISR
+                0x0800088a       0xba C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x0800088a                xQueueGenericSendFromISR
  .text.xQueueReceive
-                0x08020924      0x13c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x08020924                xQueueReceive
+                0x08000944      0x13c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000944                xQueueReceive
  .text.vQueueAddToRegistry
-                0x08020a60       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x08020a60                vQueueAddToRegistry
+                0x08000a80       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000a80                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x08020a84       0x46 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
-                0x08020a84                vQueueWaitForMessageRestricted
- *fill*         0x08020aca        0x2 
+                0x08000aa4       0x46 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x08000aa4                vQueueWaitForMessageRestricted
+ *fill*         0x08000aea        0x2 
  .text.prvAddCurrentTaskToDelayedList
-                0x08020acc       0x88 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000aec       0x88 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
  .text.prvIdleTask
-                0x08020b54       0x74 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000b74       0x74 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
  .text.prvResetNextTaskUnblockTime
-                0x08020bc8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000be8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
  .text.xTaskCreate
-                0x08020bec      0x208 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020bec                xTaskCreate
+                0x08000c0c      0x208 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000c0c                xTaskCreate
  .text.vTaskStartScheduler
-                0x08020df4       0x98 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020df4                vTaskStartScheduler
+                0x08000e14       0x98 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000e14                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08020e8c       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020e8c                vTaskSuspendAll
+                0x08000eac       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000eac                vTaskSuspendAll
  .text.xTaskGetTickCount
-                0x08020e9c        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020e9c                xTaskGetTickCount
+                0x08000ebc        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000ebc                xTaskGetTickCount
  .text.xTaskIncrementTick
-                0x08020ea8      0x140 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020ea8                xTaskIncrementTick
+                0x08000ec8      0x140 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08000ec8                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x08020fe8       0xec C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08020fe8                xTaskResumeAll
+                0x08001008       0xec C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08001008                xTaskResumeAll
  .text.vTaskDelay
-                0x080210d4       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x080210d4                vTaskDelay
+                0x080010f4       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x080010f4                vTaskDelay
  .text.vTaskSwitchContext
-                0x0802111c       0x80 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x0802111c                vTaskSwitchContext
+                0x0800113c       0x80 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x0800113c                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x0802119c       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x0802119c                vTaskPlaceOnEventList
+                0x080011bc       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x080011bc                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x080211d0       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x080211d0                vTaskPlaceOnEventListRestricted
+                0x080011f0       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x080011f0                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x0802120c       0x84 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x0802120c                xTaskRemoveFromEventList
+                0x0800122c       0x84 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x0800122c                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x08021290       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08021290                vTaskInternalSetTimeOutState
+                0x080012b0       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x080012b0                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x080212a8       0x78 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x080212a8                xTaskCheckForTimeOut
+                0x080012c8       0x78 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x080012c8                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x08021320        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x08021320                vTaskMissedYield
+                0x08001340        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x08001340                vTaskMissedYield
  .text.xTaskGetSchedulerState
-                0x0802132c       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x0802132c                xTaskGetSchedulerState
+                0x0800134c       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x0800134c                xTaskGetSchedulerState
  .text.xTaskPriorityDisinherit
-                0x0802134c       0xa0 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
-                0x0802134c                xTaskPriorityDisinherit
+                0x0800136c       0xa0 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x0800136c                xTaskPriorityDisinherit
  .text.prvInsertTimerInActiveList
-                0x080213ec       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x0800140c       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
  .text.prvCheckForValidListAndQueue
-                0x08021428       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x08001448       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
  .text.xTimerCreateTimerTask
-                0x08021480       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
-                0x08021480                xTimerCreateTimerTask
+                0x080014a0       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x080014a0                xTimerCreateTimerTask
  .text.xTimerGenericCommand
-                0x080214d8       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
-                0x080214d8                xTimerGenericCommand
+                0x080014f8       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x080014f8                xTimerGenericCommand
  .text.prvSampleTimeNow
-                0x08021530       0xa4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x08001550       0xa4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
  .text.prvTimerTask
-                0x080215d4      0x1b8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
- .text.delayMS  0x0802178c       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x080015f4      0x1b8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+ .text.delayMS  0x080017ac       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
  .text.errorBlink
-                0x080217ac       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x080017cc       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
  .text.vApplicationIdleHook
-                0x080217ec        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x080217ec                vApplicationIdleHook
+                0x0800180c        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x0800180c                vApplicationIdleHook
  .text.hard_fault_isr
-                0x080217f0        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x080217f0                hard_fault_isr
+                0x08001810        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x08001810                hard_fault_isr
  .text.HardFault_Handler
-                0x080217f8        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x080217f8                HardFault_Handler
+                0x08001818        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x08001818                HardFault_Handler
  .text.bus_fault_isr
-                0x080217fe        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x080217fe                bus_fault_isr
+                0x0800181e        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x0800181e                bus_fault_isr
  .text.BusFault_Handler
-                0x08021806        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x08021806                BusFault_Handler
+                0x08001826        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x08001826                BusFault_Handler
  .text.usage_fault_isr
-                0x0802180c        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x0802180c                usage_fault_isr
+                0x0800182c        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x0800182c                usage_fault_isr
  .text.UsageFault_Handler
-                0x08021814        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x08021814                UsageFault_Handler
+                0x08001834        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x08001834                UsageFault_Handler
  .text.vApplicationTickHook
-                0x0802181a        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
-                0x0802181a                vApplicationTickHook
+                0x0800183a        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x0800183a                vApplicationTickHook
  .text.osSystickHandler
-                0x0802181c       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\cmsis_os.c.o
-                0x0802181c                osSystickHandler
- .text._sbrk_r  0x08021830       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
-                0x08021830                _sbrk_r
+                0x0800183c       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\cmsis_os.c.o
+                0x0800183c                osSystickHandler
+ .text._sbrk_r  0x08001850       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x08001850                _sbrk_r
  .text.__malloc_lock
-                0x080218ac       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
-                0x080218ac                __malloc_lock
+                0x080018cc       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x080018cc                __malloc_lock
  .text.__malloc_unlock
-                0x080218c8        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
-                0x080218c8                __malloc_unlock
+                0x080018e8        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x080018e8                __malloc_unlock
  .text.pvPortMalloc
-                0x080218cc        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
-                0x080218cc                pvPortMalloc
+                0x080018ec        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x080018ec                pvPortMalloc
  .text.vPortFree
-                0x080218d0        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
-                0x080218d0                vPortFree
+                0x080018f0        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x080018f0                vPortFree
  .text.prvPortStartFirstTask
-                0x080218d4       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x080018f4       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
  .text.vPortEnableVFP
-                0x080218fc       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x0800191c       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
  .text.prvTaskExitError
-                0x08021910       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001930       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
  .text.pxPortInitialiseStack
-                0x08021950       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021950                pxPortInitialiseStack
- *fill*         0x0802197c        0x4 
+                0x08001970       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001970                pxPortInitialiseStack
+ *fill*         0x0800199c        0x4 
  .text.SVC_Handler
-                0x08021980       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021980                SVC_Handler
+                0x080019a0       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x080019a0                SVC_Handler
  .text.vPortEnterCritical
-                0x080219a4       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x080219a4                vPortEnterCritical
+                0x080019c4       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x080019c4                vPortEnterCritical
  .text.vPortExitCritical
-                0x080219e4       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x080219e4                vPortExitCritical
- *fill*         0x08021a0c        0x4 
+                0x08001a04       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001a04                vPortExitCritical
+ *fill*         0x08001a2c        0x4 
  .text.PendSV_Handler
-                0x08021a10       0x64 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021a10                PendSV_Handler
+                0x08001a30       0x64 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001a30                PendSV_Handler
  .text.xPortSysTickHandler
-                0x08021a74       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021a74                xPortSysTickHandler
+                0x08001a94       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001a94                xPortSysTickHandler
  .text.vPortSetupTimerInterrupt
-                0x08021aa0       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021aa0                vPortSetupTimerInterrupt
+                0x08001ac0       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001ac0                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x08021ac4      0x104 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021ac4                xPortStartScheduler
+                0x08001ae4      0x104 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001ae4                xPortStartScheduler
  .text.vPortValidateInterruptPriority
-                0x08021bc8       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
-                0x08021bc8                vPortValidateInterruptPriority
+                0x08001be8       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x08001be8                vPortValidateInterruptPriority
  .text.HAL_MspInit
-                0x08021c24        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
-                0x08021c24                HAL_MspInit
- *fill*         0x08021c26        0x2 
+                0x08001c44        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x08001c44                HAL_MspInit
+ *fill*         0x08001c46        0x2 
  .text.HAL_InitTick
-                0x08021c28       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
-                0x08021c28                HAL_InitTick
+                0x08001c48       0x48 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x08001c48                HAL_InitTick
  .text.HAL_Init
-                0x08021c70       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
-                0x08021c70                HAL_Init
+                0x08001c90       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x08001c90                HAL_Init
  .text.HAL_IncTick
-                0x08021ca4       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
-                0x08021ca4                HAL_IncTick
+                0x08001cc4       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x08001cc4                HAL_IncTick
  .text.HAL_GetTick
-                0x08021cbc        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
-                0x08021cbc                HAL_GetTick
+                0x08001cdc        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x08001cdc                HAL_GetTick
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08021cc8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021cc8                HAL_NVIC_SetPriorityGrouping
+                0x08001ce8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001ce8                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08021cec       0x64 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021cec                HAL_NVIC_SetPriority
+                0x08001d0c       0x64 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001d0c                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08021d50       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021d50                HAL_NVIC_EnableIRQ
+                0x08001d70       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001d70                HAL_NVIC_EnableIRQ
  .text.HAL_NVIC_DisableIRQ
-                0x08021d6c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021d6c                HAL_NVIC_DisableIRQ
+                0x08001d8c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001d8c                HAL_NVIC_DisableIRQ
  .text.HAL_NVIC_SystemReset
-                0x08021d90       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021d90                HAL_NVIC_SystemReset
+                0x08001db0       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001db0                HAL_NVIC_SystemReset
  .text.HAL_SYSTICK_Config
-                0x08021db4       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021db4                HAL_SYSTICK_Config
+                0x08001dd4       0x28 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001dd4                HAL_SYSTICK_Config
  .text.HAL_NVIC_ClearPendingIRQ
-                0x08021ddc       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021ddc                HAL_NVIC_ClearPendingIRQ
+                0x08001dfc       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001dfc                HAL_NVIC_ClearPendingIRQ
  .text.HAL_SYSTICK_Callback
-                0x08021df8        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021df8                HAL_SYSTICK_Callback
+                0x08001e18        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001e18                HAL_SYSTICK_Callback
  .text.HAL_SYSTICK_IRQHandler
-                0x08021dfa        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
-                0x08021dfa                HAL_SYSTICK_IRQHandler
+                0x08001e1a        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x08001e1a                HAL_SYSTICK_IRQHandler
  .text.HAL_CRC_MspInit
-                0x08021e02        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
-                0x08021e02                HAL_CRC_MspInit
+                0x08001e22        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
+                0x08001e22                HAL_CRC_MspInit
  .text.HAL_CRC_Init
-                0x08021e04       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
-                0x08021e04                HAL_CRC_Init
+                0x08001e24       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
+                0x08001e24                HAL_CRC_Init
  .text.HAL_DAC_DeInit
-                0x08021e24       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
-                0x08021e24                HAL_DAC_DeInit
+                0x08001e44       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
+                0x08001e44                HAL_DAC_DeInit
  .text.HAL_DAC_Stop
-                0x08021e40       0x22 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
-                0x08021e40                HAL_DAC_Stop
+                0x08001e60       0x22 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
+                0x08001e60                HAL_DAC_Stop
  .text.HAL_DMA_Abort
-                0x08021e62       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
-                0x08021e62                HAL_DMA_Abort
+                0x08001e82       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
+                0x08001e82                HAL_DMA_Abort
  .text.HAL_DMA_Abort_IT
-                0x08021ede       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
-                0x08021ede                HAL_DMA_Abort_IT
- *fill*         0x08021f02        0x2 
+                0x08001efe       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
+                0x08001efe                HAL_DMA_Abort_IT
+ *fill*         0x08001f22        0x2 
  .text.FLASH_Program_DoubleWord
-                0x08021f04       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08001f24       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
  .text.FLASH_Program_Word
-                0x08021f30       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08001f50       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
  .text.FLASH_Program_HalfWord
-                0x08021f54       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08001f74       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
  .text.FLASH_SetErrorCode
-                0x08021f78       0x74 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08001f98       0x74 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
  .text.HAL_FLASH_Unlock
-                0x08021fec       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                0x08021fec                HAL_FLASH_Unlock
+                0x0800200c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x0800200c                HAL_FLASH_Unlock
  .text.HAL_FLASH_Lock
-                0x08022010       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                0x08022010                HAL_FLASH_Lock
+                0x08002030       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08002030                HAL_FLASH_Lock
  .text.HAL_FLASH_GetError
-                0x08022024        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                0x08022024                HAL_FLASH_GetError
+                0x08002044        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08002044                HAL_FLASH_GetError
  .text.FLASH_WaitForLastOperation
-                0x08022030       0x50 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                0x08022030                FLASH_WaitForLastOperation
+                0x08002050       0x50 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x08002050                FLASH_WaitForLastOperation
  .text.HAL_FLASH_Program
-                0x08022080       0x8c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                0x08022080                HAL_FLASH_Program
+                0x080020a0       0x8c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x080020a0                HAL_FLASH_Program
  .text.FLASH_MassErase.isra.0
-                0x0802210c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
+                0x0800212c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
  .text.FLASH_Erase_Sector
-                0x08022130       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
-                0x08022130                FLASH_Erase_Sector
+                0x08002150       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
+                0x08002150                FLASH_Erase_Sector
  .text.FLASH_FlushCaches
-                0x0802216c       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
-                0x0802216c                FLASH_FlushCaches
+                0x0800218c       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
+                0x0800218c                FLASH_FlushCaches
  .text.HAL_FLASHEx_Erase
-                0x080221c4       0xa0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
-                0x080221c4                HAL_FLASHEx_Erase
+                0x080021e4       0xa0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
+                0x080021e4                HAL_FLASHEx_Erase
  .text.HAL_GPIO_EXTI_IRQHandler
-                0x08022264       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
-                0x08022264                HAL_GPIO_EXTI_IRQHandler
+                0x08002284       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
+                0x08002284                HAL_GPIO_EXTI_IRQHandler
  .text.HAL_RCC_OscConfig
-                0x0802227c      0x35c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
-                0x0802227c                HAL_RCC_OscConfig
+                0x0800229c      0x35c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x0800229c                HAL_RCC_OscConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x080225d8       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
-                0x080225d8                HAL_RCC_GetSysClockFreq
+                0x080025f8       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x080025f8                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_ClockConfig
-                0x08022634      0x134 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
-                0x08022634                HAL_RCC_ClockConfig
+                0x08002654      0x134 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x08002654                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetPCLK1Freq
-                0x08022768       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
-                0x08022768                HAL_RCC_GetPCLK1Freq
+                0x08002788       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x08002788                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetPCLK2Freq
-                0x08022788       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
-                0x08022788                HAL_RCC_GetPCLK2Freq
+                0x080027a8       0x20 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x080027a8                HAL_RCC_GetPCLK2Freq
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x080227a8        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
-                0x080227a8                HAL_TIM_PWM_PulseFinishedCallback
+                0x080027c8        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x080027c8                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x080227aa        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
-                0x080227aa                HAL_TIM_TriggerCallback
+                0x080027ca        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x080027ca                HAL_TIM_TriggerCallback
  .text.HAL_TIM_IRQHandler
-                0x080227ac      0x128 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
-                0x080227ac                HAL_TIM_IRQHandler
+                0x080027cc      0x128 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x080027cc                HAL_TIM_IRQHandler
  .text.TIM_Base_SetConfig
-                0x080228d4       0xb0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
-                0x080228d4                TIM_Base_SetConfig
+                0x080028f4       0xb0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x080028f4                TIM_Base_SetConfig
  .text.HAL_TIM_Base_Init
-                0x08022984       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
-                0x08022984                HAL_TIM_Base_Init
+                0x080029a4       0x58 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x080029a4                HAL_TIM_Base_Init
  .text.HAL_TIMEx_CommutCallback
-                0x080229dc        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
-                0x080229dc                HAL_TIMEx_CommutCallback
+                0x080029fc        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
+                0x080029fc                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x080229de        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
-                0x080229de                HAL_TIMEx_BreakCallback
+                0x080029fe        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
+                0x080029fe                HAL_TIMEx_BreakCallback
  .text.UART_EndRxTransfer
-                0x080229e0       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002a00       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
  .text.UART_SetConfig
-                0x08022a3c       0xbc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002a5c       0xbc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
  .text.HAL_UART_MspInit
-                0x08022af8        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022af8                HAL_UART_MspInit
+                0x08002b18        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002b18                HAL_UART_MspInit
  .text.HAL_UART_Init
-                0x08022afa       0x5e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022afa                HAL_UART_Init
+                0x08002b1a       0x5e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002b1a                HAL_UART_Init
  .text.HAL_HalfDuplex_Init
-                0x08022b58       0x66 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022b58                HAL_HalfDuplex_Init
+                0x08002b78       0x66 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002b78                HAL_HalfDuplex_Init
  .text.HAL_UART_Transmit_IT
-                0x08022bbe       0x32 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022bbe                HAL_UART_Transmit_IT
+                0x08002bde       0x32 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002bde                HAL_UART_Transmit_IT
  .text.UART_DMAAbortOnError
-                0x08022bf0       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002c10       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
  .text.HAL_UARTEx_RxEventCallback
-                0x08022c00        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022c00                HAL_UARTEx_RxEventCallback
+                0x08002c20        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002c20                HAL_UARTEx_RxEventCallback
  .text.UART_Receive_IT.isra.0
-                0x08022c02       0xb6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002c22       0xb6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
  .text.HAL_UART_IRQHandler
-                0x08022cb8      0x294 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022cb8                HAL_UART_IRQHandler
+                0x08002cd8      0x294 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002cd8                HAL_UART_IRQHandler
  .text.HAL_HalfDuplex_EnableTransmitter
-                0x08022f4c       0x30 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022f4c                HAL_HalfDuplex_EnableTransmitter
+                0x08002f6c       0x30 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002f6c                HAL_HalfDuplex_EnableTransmitter
  .text.HAL_HalfDuplex_EnableReceiver
-                0x08022f7c       0x30 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022f7c                HAL_HalfDuplex_EnableReceiver
+                0x08002f9c       0x30 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002f9c                HAL_HalfDuplex_EnableReceiver
  .text.HAL_UART_GetState
-                0x08022fac        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022fac                HAL_UART_GetState
+                0x08002fcc        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002fcc                HAL_UART_GetState
  .text.UART_Start_Receive_IT
-                0x08022fb8       0x32 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022fb8                UART_Start_Receive_IT
+                0x08002fd8       0x32 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x08002fd8                UART_Start_Receive_IT
  .text.HAL_UART_Receive_IT
-                0x08022fea       0x22 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
-                0x08022fea                HAL_UART_Receive_IT
+                0x0800300a       0x22 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x0800300a                HAL_UART_Receive_IT
  .text._ZNSt8functionIFvvEEaSEDn.isra.0
-                0x0802300c       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0800302c       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
  .text._ZNSt14_Function_baseD2Ev
-                0x08023022       0x12 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023022                std::_Function_base::~_Function_base()
-                0x08023022                std::_Function_base::~_Function_base()
+                0x08003042       0x12 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003042                std::_Function_base::~_Function_base()
+                0x08003042                std::_Function_base::~_Function_base()
  .text._Z15get_timer_indexP11TIM_TypeDef
-                0x08023034       0xc4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023034                get_timer_index(TIM_TypeDef*)
+                0x08003054       0xc4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003054                get_timer_index(TIM_TypeDef*)
  .text._ZN13HardwareTimerD2Ev
-                0x080230f8       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080230f8                HardwareTimer::~HardwareTimer()
-                0x080230f8                HardwareTimer::~HardwareTimer()
+                0x08003118       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003118                HardwareTimer::~HardwareTimer()
+                0x08003118                HardwareTimer::~HardwareTimer()
  .text._ZN13HardwareTimer5setupEP11TIM_TypeDef
-                0x08023138       0x84 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023138                HardwareTimer::setup(TIM_TypeDef*)
+                0x08003158       0x84 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003158                HardwareTimer::setup(TIM_TypeDef*)
  .text.TIM1_UP_TIM10_IRQHandler
-                0x080231bc       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080231bc                TIM1_UP_TIM10_IRQHandler
+                0x080031dc       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080031dc                TIM1_UP_TIM10_IRQHandler
  .text.TIM1_CC_IRQHandler
-                0x080231e0       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080231e0                TIM1_CC_IRQHandler
+                0x08003200       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003200                TIM1_CC_IRQHandler
  .text.TIM2_IRQHandler
-                0x080231f4       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080231f4                TIM2_IRQHandler
+                0x08003214       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003214                TIM2_IRQHandler
  .text.TIM3_IRQHandler
-                0x08023208       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023208                TIM3_IRQHandler
+                0x08003228       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003228                TIM3_IRQHandler
  .text.TIM4_IRQHandler
-                0x0802321c       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x0802321c                TIM4_IRQHandler
+                0x0800323c       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0800323c                TIM4_IRQHandler
  .text.TIM5_IRQHandler
-                0x08023230       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023230                TIM5_IRQHandler
+                0x08003250       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003250                TIM5_IRQHandler
  .text.TIM6_DAC_IRQHandler
-                0x08023244       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023244                TIM6_DAC_IRQHandler
+                0x08003264       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003264                TIM6_DAC_IRQHandler
  .text.TIM7_IRQHandler
-                0x08023258       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023258                TIM7_IRQHandler
+                0x08003278       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003278                TIM7_IRQHandler
  .text.TIM8_UP_TIM13_IRQHandler
-                0x0802326c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x0802326c                TIM8_UP_TIM13_IRQHandler
+                0x0800328c       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0800328c                TIM8_UP_TIM13_IRQHandler
  .text.TIM8_CC_IRQHandler
-                0x08023290       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023290                TIM8_CC_IRQHandler
+                0x080032b0       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080032b0                TIM8_CC_IRQHandler
  .text.TIM1_BRK_TIM9_IRQHandler
-                0x080232a4       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080232a4                TIM1_BRK_TIM9_IRQHandler
+                0x080032c4       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080032c4                TIM1_BRK_TIM9_IRQHandler
  .text.TIM1_TRG_COM_TIM11_IRQHandler
-                0x080232b8       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080232b8                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080032d8       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080032d8                TIM1_TRG_COM_TIM11_IRQHandler
  .text.TIM8_BRK_TIM12_IRQHandler
-                0x080232cc       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080232cc                TIM8_BRK_TIM12_IRQHandler
+                0x080032ec       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080032ec                TIM8_BRK_TIM12_IRQHandler
  .text.TIM8_TRG_COM_TIM14_IRQHandler
-                0x080232e0       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080232e0                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08003300       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003300                TIM8_TRG_COM_TIM14_IRQHandler
  .text._ZNSt8functionIFvvEEC2Ev
-                0x080232f4        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x080232f4                std::function<void ()>::function()
-                0x080232f4                std::function<void ()>::function()
+                0x08003314        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003314                std::function<void ()>::function()
+                0x08003314                std::function<void ()>::function()
  .text._ZN13HardwareTimerC2EP11TIM_TypeDef
-                0x08023300       0x2a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023300                HardwareTimer::HardwareTimer(TIM_TypeDef*)
-                0x08023300                HardwareTimer::HardwareTimer(TIM_TypeDef*)
+                0x08003320       0x2a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003320                HardwareTimer::HardwareTimer(TIM_TypeDef*)
+                0x08003320                HardwareTimer::HardwareTimer(TIM_TypeDef*)
  .text._ZNKSt8functionIFvvEEclEv
-                0x0802332a       0x12 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x0802332a                std::function<void ()>::operator()() const
+                0x0800334a       0x12 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0800334a                std::function<void ()>::operator()() const
  .text._ZN13HardwareTimer14updateCallbackEP17TIM_HandleTypeDef
-                0x0802333c       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x0802333c                HardwareTimer::updateCallback(TIM_HandleTypeDef*)
+                0x0800335c       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0800335c                HardwareTimer::updateCallback(TIM_HandleTypeDef*)
  .text.HAL_TIM_PeriodElapsedCallback
-                0x08023354        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023354                HAL_TIM_PeriodElapsedCallback
+                0x08003374        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003374                HAL_TIM_PeriodElapsedCallback
  .text._ZN13HardwareTimer22captureCompareCallbackEP17TIM_HandleTypeDef
-                0x08023358       0x3e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023358                HardwareTimer::captureCompareCallback(TIM_HandleTypeDef*)
+                0x08003378       0x3e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x08003378                HardwareTimer::captureCompareCallback(TIM_HandleTypeDef*)
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x08023396        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x08023396                HAL_TIM_OC_DelayElapsedCallback
+                0x080033b6        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080033b6                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x0802339a        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-                0x0802339a                HAL_TIM_IC_CaptureCallback
- .text._Znwj    0x0802339e        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
-                0x0802339e                operator new(unsigned int)
- .text._ZdlPvj  0x080233a2        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
-                0x080233a2                operator delete(void*, unsigned int)
- *fill*         0x080233a6        0x2 
+                0x080033ba        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x080033ba                HAL_TIM_IC_CaptureCallback
+ .text._Znwj    0x080033be        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
+                0x080033be                operator new(unsigned int)
+ .text._ZdlPvj  0x080033c2        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
+                0x080033c2                operator delete(void*, unsigned int)
+ *fill*         0x080033c6        0x2 
  .text.set_GPIO_Port_Clock
-                0x080233a8      0x130 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\PortNames.c.o
-                0x080233a8                set_GPIO_Port_Clock
+                0x080033c8      0x130 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\PortNames.c.o
+                0x080033c8                set_GPIO_Port_Clock
  .text.get_dac_channel
-                0x080234d8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
-                0x080234d8                get_dac_channel
+                0x080034f8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+                0x080034f8                get_dac_channel
  .text.HAL_DAC_MspDeInit
-                0x080234fc       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
-                0x080234fc                HAL_DAC_MspDeInit
+                0x0800351c       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+                0x0800351c                HAL_DAC_MspDeInit
  .text.dac_stop
-                0x08023528       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
-                0x08023528                dac_stop
+                0x08003548       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+                0x08003548                dac_stop
  .text.pwm_stop
-                0x0802355c       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
-                0x0802355c                pwm_stop
+                0x0800357c       0x5c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+                0x0800357c                pwm_stop
  .text.getCurrentMillis
-                0x080235b8        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
-                0x080235b8                getCurrentMillis
+                0x080035d8        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
+                0x080035d8                getCurrentMillis
  .text.SysTick_Handler
-                0x080235bc       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
-                0x080235bc                SysTick_Handler
+                0x080035dc       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
+                0x080035dc                SysTick_Handler
  .text.configHSECapacitorTuning
-                0x080235cc        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
-                0x080235cc                configHSECapacitorTuning
- *fill*         0x080235ce        0x2 
+                0x080035ec        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
+                0x080035ec                configHSECapacitorTuning
+ *fill*         0x080035ee        0x2 
  .text.configIPClock
-                0x080235d0       0x4c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
-                0x080235d0                configIPClock
+                0x080035f0       0x4c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
+                0x080035f0                configIPClock
  .text.dwt_init
-                0x0802361c       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\dwt.c.o
-                0x0802361c                dwt_init
+                0x0800363c       0x3c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\dwt.c.o
+                0x0800363c                dwt_init
  .text.hw_config_init
-                0x08023658       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\hw_config.c.o
-                0x08023658                hw_config_init
+                0x08003678       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\hw_config.c.o
+                0x08003678                hw_config_init
  .text.startup._ZNSt8functionIFvvEEC2EDn.constprop.0.isra.0
-                0x0802367c        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x0800369c        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
  .text.HAL_GPIO_EXTI_Callback
-                0x08023688       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x08023688                HAL_GPIO_EXTI_Callback
+                0x080036a8       0x2c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036a8                HAL_GPIO_EXTI_Callback
  .text.EXTI0_IRQHandler
-                0x080236b4        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236b4                EXTI0_IRQHandler
+                0x080036d4        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036d4                EXTI0_IRQHandler
  .text.EXTI1_IRQHandler
-                0x080236ba        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236ba                EXTI1_IRQHandler
+                0x080036da        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036da                EXTI1_IRQHandler
  .text.EXTI2_IRQHandler
-                0x080236c0        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236c0                EXTI2_IRQHandler
+                0x080036e0        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036e0                EXTI2_IRQHandler
  .text.EXTI3_IRQHandler
-                0x080236c6        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236c6                EXTI3_IRQHandler
+                0x080036e6        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036e6                EXTI3_IRQHandler
  .text.EXTI4_IRQHandler
-                0x080236cc        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236cc                EXTI4_IRQHandler
+                0x080036ec        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036ec                EXTI4_IRQHandler
  .text.EXTI9_5_IRQHandler
-                0x080236d2       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236d2                EXTI9_5_IRQHandler
+                0x080036f2       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080036f2                EXTI9_5_IRQHandler
  .text.EXTI15_10_IRQHandler
-                0x080236e8       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x080236e8                EXTI15_10_IRQHandler
+                0x08003708       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x08003708                EXTI15_10_IRQHandler
  .text.startup._GLOBAL__sub_I__Z22stm32_interrupt_enableP12GPIO_TypeDeftSt8functionIFvvEEm
-                0x08023700       0xd8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x08003720       0xd8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
  .text.exit._GLOBAL__sub_D__Z22stm32_interrupt_enableP12GPIO_TypeDeftSt8functionIFvvEEm
-                0x080237d8       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x080037f8       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
  .text.LL_GPIO_SetPinPull
-                0x080237f4       0x2a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x08003814       0x2a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
  .text.pin_in_pinmap
-                0x0802381e       0x1e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x0802381e                pin_in_pinmap
+                0x0800383e       0x1e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x0800383e                pin_in_pinmap
  .text.pin_function
-                0x0802383c      0x11c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x0802383c                pin_function
+                0x0800385c      0x11c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x0800385c                pin_function
  .text.pinmap_pinout
-                0x08023958       0x1a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x08023958                pinmap_pinout
+                0x08003978       0x1a C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x08003978                pinmap_pinout
  .text.pinmap_find_peripheral
-                0x08023972       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x08023972                pinmap_find_peripheral
+                0x08003992       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x08003992                pinmap_find_peripheral
  .text.pinmap_peripheral
-                0x08023988        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x08023988                pinmap_peripheral
+                0x080039a8        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039a8                pinmap_peripheral
  .text.pinmap_find_pin
-                0x08023994       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x08023994                pinmap_find_pin
+                0x080039b4       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039b4                pinmap_find_pin
  .text.pinmap_pin
-                0x080239aa        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x080239aa                pinmap_pin
+                0x080039ca        0xc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039ca                pinmap_pin
  .text.pinmap_find_function
-                0x080239b6       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x080239b6                pinmap_find_function
+                0x080039d6       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039d6                pinmap_find_function
  .text.pinmap_function
-                0x080239cc        0xa C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x080239cc                pinmap_function
+                0x080039ec        0xa C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039ec                pinmap_function
  .text.pinmap_merge_peripheral
-                0x080239d6       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x080239d6                pinmap_merge_peripheral
- *fill*         0x080239ea        0x2 
+                0x080039f6       0x14 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x080039f6                pinmap_merge_peripheral
+ *fill*         0x08003a0a        0x2 
  .text.SystemInit
-                0x080239ec       0x50 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
-                0x080239ec                SystemInit
+                0x08003a0c       0x50 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
+                0x08003a0c                SystemInit
  .text.get_timer_obj
-                0x08023a3c        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023a3c                get_timer_obj
+                0x08003a5c        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003a5c                get_timer_obj
  .text.enableTimerClock
-                0x08023a40      0x1f0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023a40                enableTimerClock
+                0x08003a60      0x1f0 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003a60                enableTimerClock
  .text.disableTimerClock
-                0x08023c30      0x128 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023c30                disableTimerClock
+                0x08003c50      0x128 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003c50                disableTimerClock
  .text.getTimerUpIrq
-                0x08023d58       0xbc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023d58                getTimerUpIrq
+                0x08003d78       0xbc C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003d78                getTimerUpIrq
  .text.getTimerCCIrq
-                0x08023e14       0xc4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023e14                getTimerCCIrq
+                0x08003e34       0xc4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003e34                getTimerCCIrq
  .text.HAL_TIM_Base_MspInit
-                0x08023ed8       0x4e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
-                0x08023ed8                HAL_TIM_Base_MspInit
- *fill*         0x08023f26        0x2 
+                0x08003ef8       0x4e C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x08003ef8                HAL_TIM_Base_MspInit
+ *fill*         0x08003f46        0x2 
  .text.uart_init.part.0
-                0x08023f28      0x278 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08003f48      0x278 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
  .text.uart_init
-                0x080241a0       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080241a0                uart_init
- *fill*         0x080241b6        0x2 
+                0x080041c0       0x16 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080041c0                uart_init
+ *fill*         0x080041d6        0x2 
  .text.serial_rx_active
-                0x080241b8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080241b8                serial_rx_active
+                0x080041d8       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080041d8                serial_rx_active
  .text.serial_tx_active
-                0x080241dc       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080241dc                serial_tx_active
+                0x080041fc       0x24 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080041fc                serial_tx_active
  .text.uart_getc
-                0x08024200       0x38 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x08024200                uart_getc
+                0x08004220       0x38 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004220                uart_getc
  .text.uart_attach_rx_callback
-                0x08024238       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x08024238                uart_attach_rx_callback
+                0x08004258       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004258                uart_attach_rx_callback
  .text.uart_attach_tx_callback
-                0x08024278       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x08024278                uart_attach_tx_callback
+                0x08004298       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004298                uart_attach_tx_callback
  .text.uart_enable_tx
-                0x080242b8       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080242b8                uart_enable_tx
+                0x080042d8       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080042d8                uart_enable_tx
  .text.uart_enable_rx
-                0x080242d4       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080242d4                uart_enable_rx
+                0x080042f4       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080042f4                uart_enable_rx
  .text.HAL_UART_RxCpltCallback
-                0x080242f0        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080242f0                HAL_UART_RxCpltCallback
+                0x08004310        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004310                HAL_UART_RxCpltCallback
  .text.HAL_UART_TxCpltCallback
-                0x080242f6        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080242f6                HAL_UART_TxCpltCallback
+                0x08004316        0x6 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004316                HAL_UART_TxCpltCallback
  .text.HAL_UART_ErrorCallback
-                0x080242fc       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080242fc                HAL_UART_ErrorCallback
+                0x0800431c       0x7c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x0800431c                HAL_UART_ErrorCallback
  .text.USART1_IRQHandler
-                0x08024378       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x08024378                USART1_IRQHandler
+                0x08004398       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004398                USART1_IRQHandler
  .text.USART2_IRQHandler
-                0x08024390       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x08024390                USART2_IRQHandler
+                0x080043b0       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080043b0                USART2_IRQHandler
  .text.USART3_IRQHandler
-                0x080243ac       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080243ac                USART3_IRQHandler
+                0x080043cc       0x1c C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080043cc                USART3_IRQHandler
  .text.UART4_IRQHandler
-                0x080243c8       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080243c8                UART4_IRQHandler
+                0x080043e8       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x080043e8                UART4_IRQHandler
  .text.UART5_IRQHandler
-                0x080243e0       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080243e0                UART5_IRQHandler
+                0x08004400       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004400                UART5_IRQHandler
  .text.USART6_IRQHandler
-                0x080243f8       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
-                0x080243f8                USART6_IRQHandler
- .text._exit    0x08024410        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
-                0x08024410                _exit
- *fill*         0x08024412        0x2 
- .text._kill    0x08024414       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
-                0x08024414                _kill
- .text._getpid  0x08024424        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
-                0x08024424                _getpid
+                0x08004418       0x18 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x08004418                USART6_IRQHandler
+ .text._exit    0x08004430        0x2 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
+                0x08004430                _exit
+ *fill*         0x08004432        0x2 
+ .text._kill    0x08004434       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
+                0x08004434                _kill
+ .text._getpid  0x08004444        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
+                0x08004444                _getpid
  .text.SystemClock_Config
-                0x08024428       0x9c C:\TTD\CONG DANH\FOTA\App\build\core\generic_clock.c.o
-                0x08024428                SystemClock_Config
+                0x08004448       0x9c C:\TTD\CONG DANH\FOTA\App\build\core\generic_clock.c.o
+                0x08004448                SystemClock_Config
  .text._ZN14HardwareSerial9availableEv
-                0x080244c4       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080244c4                HardwareSerial::available()
+                0x080044e4       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080044e4                HardwareSerial::available()
  .text._ZN14HardwareSerial4peekEv
-                0x080244d4       0x1a C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080244d4                HardwareSerial::peek()
+                0x080044f4       0x1a C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080044f4                HardwareSerial::peek()
  .text._ZN14HardwareSerial17availableForWriteEv
-                0x080244ee       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080244ee                HardwareSerial::availableForWrite()
+                0x0800450e       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x0800450e                HardwareSerial::availableForWrite()
  .text._ZN14HardwareSerial5writeEh
-                0x0802450a       0x18 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x0802450a                HardwareSerial::write(unsigned char)
+                0x0800452a       0x18 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x0800452a                HardwareSerial::write(unsigned char)
  .text._ZN14HardwareSerial16_rx_complete_irqEP8serial_s
-                0x08024522       0x36 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024522                HardwareSerial::_rx_complete_irq(serial_s*)
+                0x08004542       0x36 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004542                HardwareSerial::_rx_complete_irq(serial_s*)
  .text._ZN14HardwareSerial16_tx_complete_irqEP8serial_s
-                0x08024558       0x60 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024558                HardwareSerial::_tx_complete_irq(serial_s*)
+                0x08004578       0x60 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004578                HardwareSerial::_tx_complete_irq(serial_s*)
  .text._ZN14HardwareSerial5writeEPKhj
-                0x080245b8       0xe4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080245b8                HardwareSerial::write(unsigned char const*, unsigned int)
+                0x080045d8       0xe4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080045d8                HardwareSerial::write(unsigned char const*, unsigned int)
  .text._ZN14HardwareSerial4initE7PinNameS0_S0_S0_
-                0x0802469c       0x32 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x0802469c                HardwareSerial::init(PinName, PinName, PinName, PinName)
+                0x080046bc       0x32 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080046bc                HardwareSerial::init(PinName, PinName, PinName, PinName)
  .text._ZN14HardwareSerial5flushEm
-                0x080246ce       0x36 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080246ce                HardwareSerial::flush(unsigned long)
+                0x080046ee       0x36 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080046ee                HardwareSerial::flush(unsigned long)
  .text._ZN14HardwareSerial5flushEv
-                0x08024704        0x6 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024704                HardwareSerial::flush()
- *fill*         0x0802470a        0x2 
+                0x08004724        0x6 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004724                HardwareSerial::flush()
+ *fill*         0x0800472a        0x2 
  .text._ZN14HardwareSerial5setRxEm
-                0x0802470c       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x0802470c                HardwareSerial::setRx(unsigned long)
+                0x0800472c       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x0800472c                HardwareSerial::setRx(unsigned long)
  .text._ZN14HardwareSerial5setTxEm
-                0x08024754       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024754                HardwareSerial::setTx(unsigned long)
+                0x08004774       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004774                HardwareSerial::setTx(unsigned long)
  .text._ZN14HardwareSerialC2EPv16HalfDuplexMode_t
-                0x0802479c       0x9c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x0802479c                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
-                0x0802479c                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x080047bc       0x9c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x080047bc                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x080047bc                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
  .text._ZN14HardwareSerial18enableHalfDuplexRxEv
-                0x08024838       0x2c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024838                HardwareSerial::enableHalfDuplexRx()
+                0x08004858       0x2c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004858                HardwareSerial::enableHalfDuplexRx()
  .text._ZN14HardwareSerial5beginEmh
-                0x08024864       0x8c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08024864                HardwareSerial::begin(unsigned long, unsigned char)
+                0x08004884       0x8c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004884                HardwareSerial::begin(unsigned long, unsigned char)
  .text._ZN14HardwareSerial4readEv
-                0x080248f0       0x2e C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x080248f0                HardwareSerial::read()
- *fill*         0x0802491e        0x2 
+                0x08004910       0x2e C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004910                HardwareSerial::read()
+ *fill*         0x0800493e        0x2 
  .text.startup._GLOBAL__sub_I_Serial4
-                0x08024920       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08004940       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
  .text._ZN5Print5writeEPKc
-                0x08024934       0x20 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
-                0x08024934                Print::write(char const*)
+                0x08004954       0x20 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x08004954                Print::write(char const*)
  .text._ZN5Print7printlnEv
-                0x08024954       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
-                0x08024954                Print::println()
+                0x08004974       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x08004974                Print::println()
  .text._ZN5Print7printlnEPK19__FlashStringHelper
-                0x08024964       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
-                0x08024964                Print::println(__FlashStringHelper const*)
+                0x08004984       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x08004984                Print::println(__FlashStringHelper const*)
  .text._ZN5Print7printlnEPKc
-                0x08024978        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
-                0x08024978                Print::println(char const*)
+                0x08004998        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x08004998                Print::println(char const*)
  .text._ZN6Stream9timedReadEv
-                0x0802497c       0x2a C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
-                0x0802497c                Stream::timedRead()
+                0x0800499c       0x2a C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
+                0x0800499c                Stream::timedRead()
  .text._ZN6Stream9readBytesEPcj
-                0x080249a6       0x22 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
-                0x080249a6                Stream::readBytes(char*, unsigned int)
+                0x080049c6       0x22 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
+                0x080049c6                Stream::readBytes(char*, unsigned int)
  .text._ZN6Stream14readBytesUntilEcPcj
-                0x080249c8       0x30 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
-                0x080249c8                Stream::readBytesUntil(char, char*, unsigned int)
+                0x080049e8       0x30 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
+                0x080049e8                Stream::readBytesUntil(char, char*, unsigned int)
  .text.startup._Z7premainv
-                0x080249f8       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
-                0x080249f8                premain()
+                0x08004a18       0x10 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
+                0x08004a18                premain()
  .text.startup.main
-                0x08024a08       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
-                0x08024a08                main
+                0x08004a28       0x14 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
+                0x08004a28                main
  .text.Reset_Handler
-                0x08024a1c       0x50 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
-                0x08024a1c                Reset_Handler
+                0x08004a3c       0x50 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
+                0x08004a3c                Reset_Handler
  .text.Default_Handler
-                0x08024a6c        0x2 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
-                0x08024a6c                RTC_Alarm_IRQHandler
-                0x08024a6c                HASH_RNG_IRQHandler
-                0x08024a6c                DebugMon_Handler
-                0x08024a6c                DMA2_Stream5_IRQHandler
-                0x08024a6c                DMA1_Stream5_IRQHandler
-                0x08024a6c                PVD_IRQHandler
-                0x08024a6c                SDIO_IRQHandler
-                0x08024a6c                TAMP_STAMP_IRQHandler
-                0x08024a6c                NMI_Handler
-                0x08024a6c                CAN2_RX1_IRQHandler
-                0x08024a6c                I2C3_ER_IRQHandler
-                0x08024a6c                I2C2_EV_IRQHandler
-                0x08024a6c                DMA1_Stream2_IRQHandler
-                0x08024a6c                CAN1_RX0_IRQHandler
-                0x08024a6c                FPU_IRQHandler
-                0x08024a6c                OTG_HS_WKUP_IRQHandler
-                0x08024a6c                CAN2_SCE_IRQHandler
-                0x08024a6c                DMA2_Stream2_IRQHandler
-                0x08024a6c                SPI1_IRQHandler
-                0x08024a6c                DCMI_IRQHandler
-                0x08024a6c                CAN2_RX0_IRQHandler
-                0x08024a6c                DMA2_Stream3_IRQHandler
-                0x08024a6c                CAN1_RX1_IRQHandler
-                0x08024a6c                DMA2_Stream0_IRQHandler
-                0x08024a6c                I2C1_EV_IRQHandler
-                0x08024a6c                DMA1_Stream6_IRQHandler
-                0x08024a6c                DMA1_Stream1_IRQHandler
-                0x08024a6c                RCC_IRQHandler
-                0x08024a6c                Default_Handler
-                0x08024a6c                ADC_IRQHandler
-                0x08024a6c                DMA1_Stream7_IRQHandler
-                0x08024a6c                CAN2_TX_IRQHandler
-                0x08024a6c                DMA2_Stream7_IRQHandler
-                0x08024a6c                I2C3_EV_IRQHandler
-                0x08024a6c                RTC_WKUP_IRQHandler
-                0x08024a6c                ETH_WKUP_IRQHandler
-                0x08024a6c                SPI2_IRQHandler
-                0x08024a6c                OTG_HS_EP1_IN_IRQHandler
-                0x08024a6c                MemManage_Handler
-                0x08024a6c                DMA1_Stream0_IRQHandler
-                0x08024a6c                CAN1_TX_IRQHandler
-                0x08024a6c                FSMC_IRQHandler
-                0x08024a6c                ETH_IRQHandler
-                0x08024a6c                OTG_HS_EP1_OUT_IRQHandler
-                0x08024a6c                WWDG_IRQHandler
-                0x08024a6c                OTG_FS_WKUP_IRQHandler
-                0x08024a6c                OTG_HS_IRQHandler
-                0x08024a6c                I2C2_ER_IRQHandler
-                0x08024a6c                DMA2_Stream1_IRQHandler
-                0x08024a6c                CAN1_SCE_IRQHandler
-                0x08024a6c                FLASH_IRQHandler
-                0x08024a6c                DMA2_Stream4_IRQHandler
-                0x08024a6c                OTG_FS_IRQHandler
-                0x08024a6c                SPI3_IRQHandler
-                0x08024a6c                DMA1_Stream4_IRQHandler
-                0x08024a6c                I2C1_ER_IRQHandler
-                0x08024a6c                DMA2_Stream6_IRQHandler
-                0x08024a6c                DMA1_Stream3_IRQHandler
- *fill*         0x08024a6e        0x2 
- .text.pinMode  0x08024a70       0xd4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
-                0x08024a70                pinMode
+                0x08004a8c        0x2 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
+                0x08004a8c                RTC_Alarm_IRQHandler
+                0x08004a8c                HASH_RNG_IRQHandler
+                0x08004a8c                DebugMon_Handler
+                0x08004a8c                DMA2_Stream5_IRQHandler
+                0x08004a8c                DMA1_Stream5_IRQHandler
+                0x08004a8c                PVD_IRQHandler
+                0x08004a8c                SDIO_IRQHandler
+                0x08004a8c                TAMP_STAMP_IRQHandler
+                0x08004a8c                NMI_Handler
+                0x08004a8c                CAN2_RX1_IRQHandler
+                0x08004a8c                I2C3_ER_IRQHandler
+                0x08004a8c                I2C2_EV_IRQHandler
+                0x08004a8c                DMA1_Stream2_IRQHandler
+                0x08004a8c                CAN1_RX0_IRQHandler
+                0x08004a8c                FPU_IRQHandler
+                0x08004a8c                OTG_HS_WKUP_IRQHandler
+                0x08004a8c                CAN2_SCE_IRQHandler
+                0x08004a8c                DMA2_Stream2_IRQHandler
+                0x08004a8c                SPI1_IRQHandler
+                0x08004a8c                DCMI_IRQHandler
+                0x08004a8c                CAN2_RX0_IRQHandler
+                0x08004a8c                DMA2_Stream3_IRQHandler
+                0x08004a8c                CAN1_RX1_IRQHandler
+                0x08004a8c                DMA2_Stream0_IRQHandler
+                0x08004a8c                I2C1_EV_IRQHandler
+                0x08004a8c                DMA1_Stream6_IRQHandler
+                0x08004a8c                DMA1_Stream1_IRQHandler
+                0x08004a8c                RCC_IRQHandler
+                0x08004a8c                Default_Handler
+                0x08004a8c                ADC_IRQHandler
+                0x08004a8c                DMA1_Stream7_IRQHandler
+                0x08004a8c                CAN2_TX_IRQHandler
+                0x08004a8c                DMA2_Stream7_IRQHandler
+                0x08004a8c                I2C3_EV_IRQHandler
+                0x08004a8c                RTC_WKUP_IRQHandler
+                0x08004a8c                ETH_WKUP_IRQHandler
+                0x08004a8c                SPI2_IRQHandler
+                0x08004a8c                OTG_HS_EP1_IN_IRQHandler
+                0x08004a8c                MemManage_Handler
+                0x08004a8c                DMA1_Stream0_IRQHandler
+                0x08004a8c                CAN1_TX_IRQHandler
+                0x08004a8c                FSMC_IRQHandler
+                0x08004a8c                ETH_IRQHandler
+                0x08004a8c                OTG_HS_EP1_OUT_IRQHandler
+                0x08004a8c                WWDG_IRQHandler
+                0x08004a8c                OTG_FS_WKUP_IRQHandler
+                0x08004a8c                OTG_HS_IRQHandler
+                0x08004a8c                I2C2_ER_IRQHandler
+                0x08004a8c                DMA2_Stream1_IRQHandler
+                0x08004a8c                CAN1_SCE_IRQHandler
+                0x08004a8c                FLASH_IRQHandler
+                0x08004a8c                DMA2_Stream4_IRQHandler
+                0x08004a8c                OTG_FS_IRQHandler
+                0x08004a8c                SPI3_IRQHandler
+                0x08004a8c                DMA1_Stream4_IRQHandler
+                0x08004a8c                I2C1_ER_IRQHandler
+                0x08004a8c                DMA2_Stream6_IRQHandler
+                0x08004a8c                DMA1_Stream3_IRQHandler
+ *fill*         0x08004a8e        0x2 
+ .text.pinMode  0x08004a90       0xd4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
+                0x08004a90                pinMode
  .text.digitalWrite
-                0x08024b44       0x74 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
-                0x08024b44                digitalWrite
+                0x08004b64       0x74 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
+                0x08004b64                digitalWrite
  .text.digitalRead
-                0x08024bb8       0x74 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
-                0x08024bb8                digitalRead
- .text.millis   0x08024c2c        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
-                0x08024c2c                millis
- .text.delay    0x08024c30       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
-                0x08024c30                delay
+                0x08004bd8       0x74 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
+                0x08004bd8                digitalRead
+ .text.millis   0x08004c4c        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
+                0x08004c4c                millis
+ .text.delay    0x08004c50       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
+                0x08004c50                delay
  .text._Z14serialEventRunv
-                0x08024c4c       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WSerial.cpp.o)
-                0x08024c4c                serialEventRun()
- .text.init     0x08024c68        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(board.c.o)
-                0x08024c68                init
- .text.__empty  0x08024c6c        0x2 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(hooks.c.o)
-                0x08024c6c                yield
- *fill*         0x08024c6e        0x2 
- .text.malloc   0x08024c70       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
-                0x08024c70                malloc
- .text.free     0x08024c80       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
-                0x08024c80                free
+                0x08004c6c       0x1c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WSerial.cpp.o)
+                0x08004c6c                serialEventRun()
+ .text.init     0x08004c88        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(board.c.o)
+                0x08004c88                init
+ .text.__empty  0x08004c8c        0x2 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(hooks.c.o)
+                0x08004c8c                yield
+ *fill*         0x08004c8e        0x2 
+ .text.malloc   0x08004c90       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
+                0x08004c90                malloc
+ .text.free     0x08004ca0       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
+                0x08004ca0                free
  .text.sbrk_aligned
-                0x08024c90       0x44 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x08004cb0       0x44 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x08024cd4      0x100 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x08024cd4                _malloc_r
- .text.memset   0x08024dd4       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x08024dd4                memset
+                0x08004cf4      0x100 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x08004cf4                _malloc_r
+ .text.memset   0x08004df4       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x08004df4                memset
  .text._reclaim_reent
-                0x08024de4       0xac C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
-                0x08024de4                _reclaim_reent
+                0x08004e04       0xac C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+                0x08004e04                _reclaim_reent
  .text.__libc_init_array
-                0x08024e90       0x48 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x08024e90                __libc_init_array
- .text.memcpy   0x08024ed8       0x1c C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
-                0x08024ed8                memcpy
- .text._free_r  0x08024ef4       0x94 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
-                0x08024ef4                _free_r
- .text.abort    0x08024f88        0xe C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
-                0x08024f88                abort
+                0x08004eb0       0x48 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x08004eb0                __libc_init_array
+ .text.memcpy   0x08004ef8       0x1c C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x08004ef8                memcpy
+ .text._free_r  0x08004f14       0x94 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x08004f14                _free_r
+ .text.abort    0x08004fa8        0xe C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
+                0x08004fa8                abort
  .text._raise_r
-                0x08024f96       0x50 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
-                0x08024f96                _raise_r
- *fill*         0x08024fe6        0x2 
- .text.raise    0x08024fe8       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
-                0x08024fe8                raise
- .text._kill_r  0x08024ff8       0x24 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
-                0x08024ff8                _kill_r
+                0x08004fb6       0x50 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
+                0x08004fb6                _raise_r
+ *fill*         0x08005006        0x2 
+ .text.raise    0x08005008       0x10 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
+                0x08005008                raise
+ .text._kill_r  0x08005018       0x24 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
+                0x08005018                _kill_r
  .text._getpid_r
-                0x0802501c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
-                0x0802501c                _getpid_r
+                0x0800503c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
+                0x0800503c                _getpid_r
  .text.__udivmoddi4
-                0x08025020      0x2bc C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x08025020                __udivmoddi4
+                0x08005040      0x2bc C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x08005040                __udivmoddi4
  .text.unlikely._ZSt25__throw_bad_function_callv
-                0x080252dc        0x6 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
-                0x080252dc                std::__throw_bad_function_call()
+                0x080052fc        0x6 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
+                0x080052fc                std::__throw_bad_function_call()
  *(.glue_7)
- .glue_7        0x080252e2        0x0 linker stubs
+ .glue_7        0x08005302        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080252e2        0x0 linker stubs
+ .glue_7t       0x08005302        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x080252e2        0x2 
- .eh_frame      0x080252e4        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x08005302        0x2 
+ .eh_frame      0x08005304        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080252e4        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x080252e4                _init
- .init          0x080252e8        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08005304        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08005304                _init
+ .init          0x08005308        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080252f0        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
-                0x080252f0                _fini
- .fini          0x080252f4        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
-                0x080252fc                        . = ALIGN (0x4)
-                0x080252fc                        _etext = .
+ .fini          0x08005310        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
+                0x08005310                _fini
+ .fini          0x08005314        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0800531c                        . = ALIGN (0x4)
+                0x0800531c                        _etext = .
 
-.vfp11_veneer   0x080252fc        0x0
- .vfp11_veneer  0x080252fc        0x0 linker stubs
+.vfp11_veneer   0x0800531c        0x0
+ .vfp11_veneer  0x0800531c        0x0 linker stubs
 
-.v4_bx          0x080252fc        0x0
- .v4_bx         0x080252fc        0x0 linker stubs
+.v4_bx          0x0800531c        0x0
+ .v4_bx         0x0800531c        0x0 linker stubs
 
-.iplt           0x080252fc        0x0
- .iplt          0x080252fc        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0800531c        0x0
+ .iplt          0x0800531c        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x080252fc      0x764
-                0x080252fc                        . = ALIGN (0x4)
+.rodata         0x0800531c      0x764
+                0x0800531c                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080252fc        0xc C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .rodata        0x0800531c        0xc C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
  *(.rodata*)
  .rodata.setup.str1.1
-                0x08025308       0x32 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x08005328       0x32 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
                                  0x13 (size before relaxing)
  .rodata._Z9Task_UARTPv.str1.1
-                0x0802533a        0xa C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x0800535a        0xa C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
  .rodata.vTaskStartScheduler.str1.1
-                0x0802533a        0x5 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x0800535a        0x5 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
  .rodata.prvCheckForValidListAndQueue.str1.1
-                0x0802533a        0x5 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x0800535a        0x5 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
  .rodata.xTimerCreateTimerTask.str1.1
-                0x0802533a        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
- *fill*         0x0802533a        0x2 
+                0x0800535a        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+ *fill*         0x0800535a        0x2 
  .rodata.pin_map_ll
-                0x0802533c       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
-                0x0802533c                pin_map_ll
+                0x0800535c       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x0800535c                pin_map_ll
  .rodata.APBPrescTable
-                0x0802537c        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
-                0x0802537c                APBPrescTable
+                0x0800539c        0x8 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
+                0x0800539c                APBPrescTable
  .rodata.AHBPrescTable
-                0x08025384       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
-                0x08025384                AHBPrescTable
+                0x080053a4       0x10 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
+                0x080053a4                AHBPrescTable
  .rodata.PinMap_UART_CTS
-                0x08025394       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x08025394                PinMap_UART_CTS
+                0x080053b4       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x080053b4                PinMap_UART_CTS
  .rodata.PinMap_UART_RTS
-                0x080253dc       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x080253dc                PinMap_UART_RTS
+                0x080053fc       0x48 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x080053fc                PinMap_UART_RTS
  .rodata.PinMap_UART_RX
-                0x08025424       0x90 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x08025424                PinMap_UART_RX
+                0x08005444       0x90 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x08005444                PinMap_UART_RX
  .rodata.PinMap_UART_TX
-                0x080254b4       0x90 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x080254b4                PinMap_UART_TX
+                0x080054d4       0x90 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x080054d4                PinMap_UART_TX
  .rodata.PinMap_TIM
-                0x08025544      0x33c C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x08025544                PinMap_TIM
+                0x08005564      0x33c C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x08005564                PinMap_TIM
  .rodata.PinMap_DAC
-                0x08025880       0x24 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
-                0x08025880                PinMap_DAC
+                0x080058a0       0x24 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x080058a0                PinMap_DAC
  .rodata.analogInputPin
-                0x080258a4       0x40 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
-                0x080258a4                analogInputPin
+                0x080058c4       0x40 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
+                0x080058c4                analogInputPin
  .rodata.digitalPin
-                0x080258e4      0x148 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
-                0x080258e4                digitalPin
+                0x08005904      0x148 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
+                0x08005904                digitalPin
  .rodata.CSWTCH.73
-                0x08025a2c        0x5 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
- *fill*         0x08025a31        0x3 
+                0x08005a4c        0x5 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+ *fill*         0x08005a51        0x3 
  .rodata._ZTV14HardwareSerial
-                0x08025a34       0x2c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08025a34                vtable for HardwareSerial
+                0x08005a54       0x2c C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08005a54                vtable for HardwareSerial
  .rodata._ZN5Print7printlnEv.str1.1
-                0x08025a60        0x3 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
-                0x08025a64                        . = ALIGN (0x4)
+                0x08005a80        0x3 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x08005a84                        . = ALIGN (0x4)
 
-.ARM.extab      0x08025a60        0x0
-                0x08025a60                        . = ALIGN (0x4)
+.ARM.extab      0x08005a80        0x0
+                0x08005a80                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08025a60                        . = ALIGN (0x4)
+                0x08005a80                        . = ALIGN (0x4)
 
-.ARM            0x08025a60        0x8
-                0x08025a60                        . = ALIGN (0x4)
-                0x08025a60                        __exidx_start = .
+.ARM            0x08005a80        0x8
+                0x08005a80                        . = ALIGN (0x4)
+                0x08005a80                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08025a60        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
- .ARM.exidx     0x08025a68        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x08005a80        0x8 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
+ .ARM.exidx     0x08005a88        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
  .ARM.exidx.text.__udivmoddi4
-                0x08025a68        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x08005a88        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x08025a68                        __exidx_end = .
-                0x08025a68                        . = ALIGN (0x4)
+                0x08005a88                        __exidx_end = .
+                0x08005a88                        . = ALIGN (0x4)
 
-.rel.dyn        0x08025a68        0x0
- .rel.iplt      0x08025a68        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08005a88        0x0
+ .rel.iplt      0x08005a88        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x08025a68        0x0
-                0x08025a68                        . = ALIGN (0x4)
-                0x08025a68                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08005a88        0x0
+                0x08005a88                        . = ALIGN (0x4)
+                0x08005a88                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08025a68                        PROVIDE (__preinit_array_end = .)
-                0x08025a68                        . = ALIGN (0x4)
+                0x08005a88                        PROVIDE (__preinit_array_end = .)
+                0x08005a88                        . = ALIGN (0x4)
 
-.init_array     0x08025a68       0x14
-                0x08025a68                        . = ALIGN (0x4)
-                0x08025a68                        PROVIDE (__init_array_start = .)
+.init_array     0x08005a88       0x14
+                0x08005a88                        . = ALIGN (0x4)
+                0x08005a88                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00101
-                0x08025a68        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
+                0x08005a88        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
  *(.init_array*)
- .init_array    0x08025a6c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- .init_array    0x08025a70        0x4 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
- .init_array    0x08025a74        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
- .init_array    0x08025a78        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                0x08025a7c                        PROVIDE (__init_array_end = .)
-                0x08025a7c                        . = ALIGN (0x4)
+ .init_array    0x08005a8c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .init_array    0x08005a90        0x4 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .init_array    0x08005a94        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+ .init_array    0x08005a98        0x4 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x08005a9c                        PROVIDE (__init_array_end = .)
+                0x08005a9c                        . = ALIGN (0x4)
 
-.fini_array     0x08025a7c        0x8
-                0x08025a7c                        . = ALIGN (0x4)
-                0x08025a7c                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08005a9c        0xc
+                0x08005a9c                        . = ALIGN (0x4)
+                0x08005a9c                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08025a7c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
- .fini_array    0x08025a80        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
-                0x08025a84                        PROVIDE (__fini_array_end = .)
-                0x08025a84                        . = ALIGN (0x4)
-                0x08025a84                        _sidata = LOADADDR (.data)
+ .fini_array    0x08005a9c        0x4 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08005aa0        0x4 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .fini_array    0x08005aa4        0x4 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x08005aa8                        PROVIDE (__fini_array_end = .)
+                0x08005aa8                        . = ALIGN (0x4)
+                0x08005aa8                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x94 load address 0x08025a84
+.data           0x20000000       0x94 load address 0x08005aa8
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -6323,11 +6345,11 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
                 0x20000094                        . = ALIGN (0x4)
                 0x20000094                        _edata = .
 
-.igot.plt       0x20000094        0x0 load address 0x08025b18
+.igot.plt       0x20000094        0x0 load address 0x08005b3c
  .igot.plt      0x20000094        0x0 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x20000094                        . = ALIGN (0x4)
 
-.bss            0x20000094      0x754 load address 0x08025b18
+.bss            0x20000094      0x754 load address 0x08005b3c
                 0x20000094                        _sbss = .
                 0x20000094                        __bss_start__ = _sbss
  *(.bss)
@@ -6348,12 +6370,14 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
  .bss.receivedData
                 0x200000b9       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
                 0x200000b9                receivedData
- *fill*         0x200000cd        0x3 
- .bss._ZZ16Flash_Write_DatamPmmE15EraseInitStruct
-                0x200000d0       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .bss.flash     0x200000cd        0x1 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x200000cd                flash
+ *fill*         0x200000ce        0x2 
  .bss.fota_port
-                0x200000e4      0x118 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
-                0x200000e4                fota_port
+                0x200000d0      0x118 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                0x200000d0                fota_port
+ .bss._ZZN10STM32Flash10FlashWriteEmPmtE15EraseInitStruct
+                0x200001e8       0x14 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
  .bss.xQueueRegistry
                 0x200001fc       0x40 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
                 0x200001fc                xQueueRegistry
@@ -6457,7 +6481,7 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
 LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crti.o
 LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
 LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/crt0.o
-                0x00020000                        LD_FLASH_OFFSET = 0x20000
+                0x00000000                        LD_FLASH_OFFSET = 0x0
                 0x00100000                        LD_MAX_SIZE = 0x100000
                 0x00020000                        LD_MAX_DATA_SIZE = 0x20000
 
@@ -6495,137 +6519,139 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
  .ARM.attributes
                 0x00000056       0x34 C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
  .ARM.attributes
-                0x0000008a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
+                0x0000008a       0x34 C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
  .ARM.attributes
-                0x000000be       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
+                0x000000be       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
  .ARM.attributes
-                0x000000f2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
+                0x000000f2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .ARM.attributes
-                0x00000126       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
+                0x00000126       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
  .ARM.attributes
-                0x0000015a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
+                0x0000015a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\timers.c.o
  .ARM.attributes
-                0x0000018e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\cmsis_os.c.o
+                0x0000018e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\STM32FreeRTOS.c.o
  .ARM.attributes
-                0x000001c2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
+                0x000001c2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\cmsis_os.c.o
  .ARM.attributes
-                0x000001f6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
+                0x000001f6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\heap.c.o
  .ARM.attributes
-                0x0000022a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
+                0x0000022a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
  .ARM.attributes
-                0x0000025e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
+                0x0000025e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
  .ARM.attributes
-                0x00000292       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
+                0x00000292       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_cortex.c.o
  .ARM.attributes
-                0x000002c6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
+                0x000002c6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_crc.c.o
  .ARM.attributes
-                0x000002fa       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
+                0x000002fa       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dac.c.o
  .ARM.attributes
-                0x0000032e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
+                0x0000032e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_dma.c.o
  .ARM.attributes
-                0x00000362       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
+                0x00000362       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
  .ARM.attributes
-                0x00000396       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
+                0x00000396       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
  .ARM.attributes
-                0x000003ca       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
+                0x000003ca       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
  .ARM.attributes
-                0x000003fe       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
+                0x000003fe       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_rcc.c.o
  .ARM.attributes
-                0x00000432       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
+                0x00000432       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim.c.o
  .ARM.attributes
-                0x00000466       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
+                0x00000466       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_tim_ex.c.o
  .ARM.attributes
-                0x0000049a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
+                0x0000049a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_uart.c.o
  .ARM.attributes
-                0x000004ce       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
+                0x000004ce       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
  .ARM.attributes
-                0x00000502       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\PortNames.c.o
+                0x00000502       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\new.cpp.o
  .ARM.attributes
-                0x00000536       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+                0x00000536       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\PortNames.c.o
  .ARM.attributes
-                0x0000056a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
+                0x0000056a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
  .ARM.attributes
-                0x0000059e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\dwt.c.o
+                0x0000059e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\clock.c.o
  .ARM.attributes
-                0x000005d2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\hw_config.c.o
+                0x000005d2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\dwt.c.o
  .ARM.attributes
-                0x00000606       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
+                0x00000606       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\hw_config.c.o
  .ARM.attributes
-                0x0000063a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
+                0x0000063a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
  .ARM.attributes
-                0x0000066e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
+                0x0000066e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\pinmap.c.o
  .ARM.attributes
-                0x000006a2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
+                0x000006a2       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\system_stm32yyxx.c.o
  .ARM.attributes
-                0x000006d6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
+                0x000006d6       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\timer.c.o
  .ARM.attributes
-                0x0000070a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
+                0x0000070a       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\uart.c.o
  .ARM.attributes
-                0x0000073e       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
+                0x0000073e       0x34 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\syscalls.c.o
  .ARM.attributes
-                0x00000772       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\generic_clock.c.o
+                0x00000772       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\PeripheralPins.c.o
  .ARM.attributes
-                0x000007a6       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
+                0x000007a6       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\generic_clock.c.o
  .ARM.attributes
-                0x000007da       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                0x000007da       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\variant_generic.cpp.o
  .ARM.attributes
-                0x0000080e       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
+                0x0000080e       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
  .ARM.attributes
-                0x00000842       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
+                0x00000842       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Print.cpp.o)
  .ARM.attributes
-                0x00000876       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
+                0x00000876       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
  .ARM.attributes
-                0x000008aa       0x21 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
+                0x000008aa       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(main.cpp.o)
  .ARM.attributes
-                0x000008cb       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
+                0x000008de       0x21 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
  .ARM.attributes
-                0x000008ff       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
+                0x000008ff       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
  .ARM.attributes
-                0x00000933       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WSerial.cpp.o)
+                0x00000933       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_time.c.o)
  .ARM.attributes
-                0x00000967       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(board.c.o)
+                0x00000967       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WSerial.cpp.o)
  .ARM.attributes
-                0x0000099b       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(hooks.c.o)
+                0x0000099b       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(board.c.o)
  .ARM.attributes
-                0x000009cf       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_analog.c.o)
+                0x000009cf       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(hooks.c.o)
  .ARM.attributes
-                0x00000a03       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
+                0x00000a03       0x34 C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_analog.c.o)
  .ARM.attributes
-                0x00000a37       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x00000a37       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
  .ARM.attributes
-                0x00000a6b       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
+                0x00000a6b       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .ARM.attributes
-                0x00000a9f       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x00000a9f       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-findfp.o)
  .ARM.attributes
-                0x00000ad3       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
+                0x00000ad3       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
  .ARM.attributes
-                0x00000b07       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
+                0x00000b07       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reent.o)
  .ARM.attributes
-                0x00000b3b       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x00000b3b       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-impure.o)
  .ARM.attributes
-                0x00000b6f       0x20 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
+                0x00000b6f       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
  .ARM.attributes
-                0x00000b8f       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x00000ba3       0x20 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strcmp.o)
  .ARM.attributes
-                0x00000bc3       0x17 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+                0x00000bc3       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
  .ARM.attributes
-                0x00000bda       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x00000bf7       0x17 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
  .ARM.attributes
-                0x00000c0e       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
+                0x00000c0e       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
  .ARM.attributes
-                0x00000c42       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
+                0x00000c42       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
  .ARM.attributes
-                0x00000c76       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
+                0x00000c76       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
  .ARM.attributes
-                0x00000caa       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x00000caa       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
  .ARM.attributes
-                0x00000ccc       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00000cde       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000d00       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x00000d00       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x00000d22       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
+                0x00000d34       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000d56       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
+                0x00000d56       0x34 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
+ .ARM.attributes
+                0x00000d8a       0x22 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(C:\TTD\CONG DANH\FOTA\App\build/App.ino.elf elf32-littlearm)
 LOAD linker stubs
 LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc.a
@@ -6636,6 +6662,7 @@ LOAD C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpa
  .comment       0x00000000       0x39 C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/thumb/v7e-m+fp/hard/crtbegin.o
                                  0x3a (size before relaxing)
  .comment       0x00000039       0x3a C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+ .comment       0x00000039       0x3a C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
  .comment       0x00000039       0x3a C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\list.c.o
  .comment       0x00000039       0x3a C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\queue.c.o
  .comment       0x00000039       0x3a C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\FreeRTOS\Source\tasks.c.o
@@ -6815,10 +6842,8 @@ FLASH_WaitForLastOperation                        C:\TTD\CONG DANH\FOTA\App\buil
                                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
 FPU_IRQHandler                                    C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
 FSMC_IRQHandler                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
-Flash_Write_Data(unsigned long, unsigned long*, unsigned long) C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 GPIOPort                                          C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\PortNames.c.o
                                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(wiring_digital.c.o)
-GetSector(unsigned long)                          C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 HAL_ADCEx_InjectedConfigChannel                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_adc_ex.c.o
 HAL_ADCEx_InjectedConvCpltCallback                C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_adc_ex.c.o
                                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_adc.c.o
@@ -7017,25 +7042,25 @@ HAL_ETH_WakeUpCallback                            C:\TTD\CONG DANH\FOTA\App\buil
 HAL_ETH_WritePHYRegister                          C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_eth.c.o
 HAL_EnableCompensationCell                        C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal.c.o
 HAL_FLASHEx_Erase                                 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 HAL_FLASHEx_Erase_IT                              C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
 HAL_FLASHEx_OBGetConfig                           C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
 HAL_FLASHEx_OBProgram                             C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash_ex.c.o
 HAL_FLASH_EndOfOperationCallback                  C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_GetError                                C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 HAL_FLASH_IRQHandler                              C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_Lock                                    C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 HAL_FLASH_OB_Launch                               C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_OB_Lock                                 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_OB_Unlock                               C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_OperationErrorCallback                  C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_Program                                 C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 HAL_FLASH_Program_IT                              C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
 HAL_FLASH_Unlock                                  C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_flash.c.o
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 HAL_GPIO_DeInit                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
 HAL_GPIO_EXTI_Callback                            C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\interrupt.cpp.o
                                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HAL\stm32yyxx_hal_gpio.c.o
@@ -7601,8 +7626,8 @@ HardwareSerial::HardwareSerial(unsigned long)     C:\TTD\CONG DANH\FOTA\App\buil
 HardwareSerial::HardwareSerial(unsigned long, unsigned long, unsigned long, unsigned long) C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
 HardwareSerial::HardwareSerial(unsigned long, unsigned long, unsigned long, unsigned long) C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
 HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t) C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
-                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t) C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 HardwareSerial::_rx_complete_irq(serial_s*)       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
 HardwareSerial::_tx_complete_irq(serial_s*)       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
 HardwareSerial::available()                       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
@@ -7686,8 +7711,8 @@ HardwareTimer::timerHandleDeinit()                C:\TTD\CONG DANH\FOTA\App\buil
 HardwareTimer::updateCallback(TIM_HandleTypeDef*) C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
 HardwareTimer::updateRegistersIfNotRunning(TIM_TypeDef*) C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
 HardwareTimer::~HardwareTimer()                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
-HardwareTimer::~HardwareTimer()                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
                                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
+HardwareTimer::~HardwareTimer()                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
 HardwareTimer_Handle                              C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\HardwareTimer.cpp.o
                                                   C:\TTD\CONG DANH\FOTA\App\build\libraries\SrcWrapper\stm32\analog.cpp.o
 I2C1_ER_IRQHandler                                C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
@@ -7969,6 +7994,17 @@ SDMMC_GetCmdResp7                                 C:\TTD\CONG DANH\FOTA\App\buil
 SPI1_IRQHandler                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
 SPI2_IRQHandler                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
 SPI3_IRQHandler                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(startup_stm32yyxx.S.o)
+STM32Flash::FlashErase(unsigned long)             C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+STM32Flash::FlashRead(unsigned long, unsigned long*, unsigned short) C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+STM32Flash::FlashWrite(unsigned long, unsigned long*, unsigned short) C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+STM32Flash::GetSector(unsigned long)              C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+STM32Flash::STM32Flash()                          C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+STM32Flash::STM32Flash()                          C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+STM32Flash::~STM32Flash()                         C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
+                                                  C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
+STM32Flash::~STM32Flash()                         C:\TTD\CONG DANH\FOTA\App\build\sketch\src\myLibs\Flash\Flash.cpp.o
 SVC_Handler                                       C:\TTD\CONG DANH\FOTA\App\build\libraries\STM32duino_FreeRTOS\port.c.o
 Serial4                                           C:\TTD\CONG DANH\FOTA\App\build\core\core.a(HardwareSerial.cpp.o)
                                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WSerial.cpp.o)
@@ -7998,8 +8034,8 @@ String::String(StringSumHelper&&)                 C:\TTD\CONG DANH\FOTA\App\buil
 String::String(__FlashStringHelper const*)        C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
 String::String(__FlashStringHelper const*)        C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
 String::String(char const*)                       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
-String::String(char const*)                       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
                                                   C:\TTD\CONG DANH\FOTA\App\build\core\core.a(Stream.cpp.o)
+String::String(char const*)                       C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
 String::String(char)                              C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
 String::String(char)                              C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
 String::String(double, unsigned char)             C:\TTD\CONG DANH\FOTA\App\build\core\core.a(WString.cpp.o)
@@ -8288,8 +8324,8 @@ __cxxabiv1::__class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*,
                                                   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(si_class_type_info.o)
 __cxxabiv1::__class_type_info::~__class_type_info() C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(class_type_info.o)
 __cxxabiv1::__class_type_info::~__class_type_info() C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(class_type_info.o)
-__cxxabiv1::__class_type_info::~__class_type_info() C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(class_type_info.o)
                                                   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(si_class_type_info.o)
+__cxxabiv1::__class_type_info::~__class_type_info() C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(class_type_info.o)
 __cxxabiv1::__forced_unwind::~__forced_unwind()   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(eh_exception.o)
 __cxxabiv1::__forced_unwind::~__forced_unwind()   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(eh_exception.o)
 __cxxabiv1::__forced_unwind::~__forced_unwind()   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(eh_exception.o)
@@ -8737,6 +8773,7 @@ fiprintf                                          C:/Users/NCPC/AppData/Local/Ar
                                                   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-assert.o)
                                                   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallstatsr.o)
                                                   C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mstats.o)
+flash                                             C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 fota_port                                         C:\TTD\CONG DANH\FOTA\App\build\sketch\App.ino.cpp.o
 fprintf                                           C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-fprintf.o)
 free                                              C:/Users/NCPC/AppData/Local/Arduino15/packages/STMicroelectronics/tools/xpack-arm-none-eabi-gcc/13.2.1-1.1/bin/../lib/gcc/arm-none-eabi/13.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)

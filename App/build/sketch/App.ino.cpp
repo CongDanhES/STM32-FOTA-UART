@@ -1,9 +1,8 @@
 #line 1 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
 #include "Arduino.h"
-#include "myLibs/define.h"
 #include "STM32FreeRTOS.h"  // FreeRTOS library
-#include "myLibs/Flash.h"     // Flash library
-#include "myLibs/Flash.c"     // Flash library
+
+#include "src/myLibs/define.h"
 
 #define BUFFER_SIZE 20
 
@@ -24,11 +23,11 @@ TaskHandle_t Task_LED_Handle;
 void Task_UART(void *pvParameters);
 void Task_LED(void *pvParameters);
 
-#line 26 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
+#line 25 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
 void setup();
-#line 85 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
+#line 84 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
 void loop();
-#line 26 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
+#line 25 "C:\\TTD\\CONG DANH\\FOTA\\App\\App.ino"
 void setup() {
     pinMode(LEDBLUE, OUTPUT);
     fota_port.setTx(PD5);
@@ -50,7 +49,7 @@ void Task_LED(void *pvParameters) {
     (void) pvParameters;
     while (1) {
         digitalWrite(LEDBLUE, !digitalRead(LEDBLUE));
-        vTaskDelay(pdMS_TO_TICKS(500));  // Delay for 2 seconds
+        vTaskDelay(pdMS_TO_TICKS(200));  // Delay for 2 seconds
     }
 }
 
@@ -71,8 +70,8 @@ void Task_UART(void *pvParameters) {
                 if (strcmp(receivedData, "OTA_START\r\0") == 0) {
                     // Optional: Send acknowledgment back
                     fota_port.println("OTA_START");
+                    flash.FlashWrite(FLAG_ADDRESS, &OTA_FLAG, 1);
                     delay(1000);
-                    Flash_Write_Data(FLAG_ADDRESS, &OTA_FLAG, 1);
                     HAL_NVIC_SystemReset();
 
                     // Reset buffer

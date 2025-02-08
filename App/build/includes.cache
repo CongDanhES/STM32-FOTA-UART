@@ -30,6 +30,11 @@
     "Includepath": null
   },
   {
+    "Sourcefile": "C:\\TTD\\CONG DANH\\FOTA\\App\\build\\sketch\\src\\myLibs\\Flash\\Flash.cpp",
+    "Include": "",
+    "Includepath": null
+  },
+  {
     "Sourcefile": "C:\\Users\\NCPC\\Documents\\Arduino\\libraries\\STM32duino_FreeRTOS\\src\\FreeRTOS\\Source\\croutine.c",
     "Include": "",
     "Includepath": null

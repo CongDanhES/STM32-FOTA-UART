@@ -2,3 +2,6 @@
 1738725302316	Rename resource 'Firmware'
 1738725521252	Delete resource 'Application/Core/Inc/uart.h'
 1738725558508	Delete resource 'BootLoader'
+1738889657247	Delete resource 'Application'
+1738889682344	Delete resource 'Application'
+1738889686950	Delete resource 'FOTA'

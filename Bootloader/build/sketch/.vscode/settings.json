@@ -1,0 +1,29 @@
+#line 1 "C:\\TTD\\CONG DANH\\FOTA\\Bootloader\\.vscode\\settings.json"
+{
+    "files.associations": {
+        "flash.h": "c",
+        "algorithm": "cpp",
+        "array": "cpp",
+        "deque": "cpp",
+        "functional": "cpp",
+        "initializer_list": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "memory": "cpp",
+        "queue": "cpp",
+        "random": "cpp",
+        "vector": "cpp",
+        "xhash": "cpp",
+        "xlocnum": "cpp",
+        "xmemory": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "*.tcc": "cpp",
+        "string": "cpp",
+        "unordered_map": "cpp",
+        "string_view": "cpp",
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "xlocale": "cpp"
+    }
+}
